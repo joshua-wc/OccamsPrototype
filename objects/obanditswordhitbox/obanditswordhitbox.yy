@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sWarpHitbox",
-    "path": "sprites/sWarpHitbox/sWarpHitbox.yy",
+    "name": "meleeHitbox",
+    "path": "sprites/meleeHitbox/meleeHitbox.yy",
   },
   "solid": false,
   "visible": true,
@@ -24,6 +24,8 @@
   "eventList": [
     {"isDnD":false,"eventNum":0,"eventType":4,"collisionObjectId":{"name":"oBandit","path":"objects/oBandit/oBandit.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":4,"collisionObjectId":{"name":"oPlayer","path":"objects/oPlayer/oPlayer.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
@@ -32,7 +34,7 @@
     "path": "folders/Objects/Hitboxes.yy",
   },
   "resourceVersion": "1.0",
-  "name": "oWarpHitbox",
+  "name": "oBanditSwordHitbox",
   "tags": [],
   "resourceType": "GMObject",
 }
