@@ -15,5 +15,5 @@ for (var i = 0; i < array_length(enemies); i++) {
 
 show_debug_message(other.hp)
 show_debug_message(other.number)
-show_debug_message("Sup")
+show_debug_message("Sup again!")
 instance_destroy()
