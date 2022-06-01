@@ -24,9 +24,9 @@ dimension : currentDimension,
 originDimension : originDimension,
 number : number
 }
-
+chooseTarget()
 
 script_execute(banditState)
 
 checkDimension(currentDimension)
-chooseTarget()
+
