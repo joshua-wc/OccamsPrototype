@@ -5,6 +5,6 @@ function enemyStateDeath(){
 	vspeed = 0
 	
 	sprite_index = sBanditDeath
-	checkAnimEnd(sprite_index, image_index, image_speed, image_number)
+	checkAnimEnd(sprite_index, image_index, image_speed, image_number, self)
 	
 }

@@ -5,11 +5,13 @@ sprite_index = sPlayerAttack
 x_speed *= attackDeceleration
 y_speed *= attackDeceleration
 
+
+
 if image_index > 6 && canAttack {
 	canAttack = false
 	stamina -= 10
 	show_debug_message("Attack!")
-	self.attack = instance_create_layer(x + attackOffset, y, "Player", oMeleeHitbox)
+	self.attack = SpawnHitbox(oPlayerSwordHitbox, attackConfig)
 }
 
 checkAnimEnd(sprite_index, image_index, image_speed, image_number)

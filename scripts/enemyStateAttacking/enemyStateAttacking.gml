@@ -17,11 +17,11 @@ vspeed *= attackDeceleration
 if image_index > 4 && canAttack {
 	canAttack = false
 
-	self.attack = instance_create_layer(x + attackOffset, y, layer, oMeleeHitbox)
+	self.attack = SpawnHitbox(oBanditSwordHitbox, attackConfig)
 }
 
 oBandit.alarm[0] = attackDelay
 
-checkAnimEnd(sprite_index, image_index, image_speed, image_number)
+checkAnimEnd(sprite_index, image_index, image_speed, image_number, self)
 
 }

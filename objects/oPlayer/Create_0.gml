@@ -20,3 +20,5 @@ canAttack = true
 
 ammo = 300
 
+
+

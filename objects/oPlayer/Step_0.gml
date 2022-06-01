@@ -10,6 +10,14 @@ keyAttack = keyboard_check_pressed(vk_space)
 keySlide = keyboard_check_pressed(vk_control)
 keyGrenade = keyboard_check_pressed(vk_alt)
 
+attackConfig = 
+{
+x : x + attackOffset,
+y : y,
+layer: layer,
+dimension : Current_Dimension
+}
+
 if keyGrenade {
 if ammo <= 0 exit
 playerState = playerStateThrow

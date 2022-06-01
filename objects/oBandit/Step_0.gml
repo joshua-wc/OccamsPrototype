@@ -15,6 +15,17 @@ if hp <= 0 {
 	}
 
 
+attackConfig = 
+{
+x : x + attackOffset,
+y : y,
+layer : layer,
+dimension : currentDimension,
+originDimension : originDimension,
+number : number
+}
+
+
 script_execute(banditState)
 
 checkDimension(currentDimension)
