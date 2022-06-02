@@ -10,16 +10,18 @@ function chooseTarget(){
 }
 
 for (var i = 0; i < array_length(enemies); i++) {
-	if enemies[i].currentDimension == currentDimension and enemies[i].originDimension != originDimension and point_distance(x, y, enemies[i].x, enemies[i].y) <= aggroRange {
+	if instance_exists(enemies[i]) and enemies[i].currentDimension == currentDimension and enemies[i].originDimension != originDimension and point_distance(x, y, enemies[i].x, enemies[i].y) <= aggroRange {
 		target = enemies[i]
 		show_debug_message("I've finally found you")
 	}
 }
 
-
-
-if target != oPlayer and point_distance(x, y, target.x, target.y) >= point_distance(x, y, oPlayer.x, oPlayer.y) and layer == oPlayer.layer target = oPlayer
 if !instance_exists(target) {
 	target = oPlayer
 }
+
+if target != oPlayer and point_distance(x, y, target.x, target.y) >= point_distance(x, y, oPlayer.x, oPlayer.y) and layer == oPlayer.layer target = oPlayer
+
+
+
 }

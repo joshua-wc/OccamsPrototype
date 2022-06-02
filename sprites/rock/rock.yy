@@ -8,14 +8,14 @@
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
   "bbox_left": 0,
-  "bbox_right": 767,
+  "bbox_right": 21,
   "bbox_top": 0,
-  "bbox_bottom": 575,
+  "bbox_bottom": 20,
   "HTile": false,
   "VTile": false,
   "For3D": false,
-  "width": 768,
-  "height": 576,
+  "width": 22,
+  "height": 21,
   "textureGroupId": {
     "name": "Default",
     "path": "texturegroups/Default",
@@ -24,12 +24,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"0534aebe-85ad-4a6d-96a6-caa22b689d34","path":"sprites/tf_beach_tileA1/tf_beach_tileA1.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"0534aebe-85ad-4a6d-96a6-caa22b689d34","path":"sprites/tf_beach_tileA1/tf_beach_tileA1.yy",},"LayerId":{"name":"488d9fb6-0a1b-4480-bc99-1f182aff779c","path":"sprites/tf_beach_tileA1/tf_beach_tileA1.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"tf_beach_tileA1","path":"sprites/tf_beach_tileA1/tf_beach_tileA1.yy",},"resourceVersion":"1.0","name":"0534aebe-85ad-4a6d-96a6-caa22b689d34","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"b261593e-9a12-41c0-baa4-7d98a67690d5","path":"sprites/Rock/Rock.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"b261593e-9a12-41c0-baa4-7d98a67690d5","path":"sprites/Rock/Rock.yy",},"LayerId":{"name":"beae63bb-b97b-4782-9ef7-b80f303e2ba1","path":"sprites/Rock/Rock.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"Rock","path":"sprites/Rock/Rock.yy",},"resourceVersion":"1.0","name":"b261593e-9a12-41c0-baa4-7d98a67690d5","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"tf_beach_tileA1","path":"sprites/tf_beach_tileA1/tf_beach_tileA1.yy",},
+    "spriteId": {"name":"Rock","path":"sprites/Rock/Rock.yy",},
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"a6646b04-9cc7-4b16-804d-a826ccb1a533","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"0534aebe-85ad-4a6d-96a6-caa22b689d34","path":"sprites/tf_beach_tileA1/tf_beach_tileA1.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"97dd4e79-ecf4-43af-906d-c52def269c84","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"b261593e-9a12-41c0-baa4-7d98a67690d5","path":"sprites/Rock/Rock.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack","modifiers":[],},
     ],
     "visibleRange": null,
@@ -58,22 +58,22 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"tf_beach_tileA1","path":"sprites/tf_beach_tileA1/tf_beach_tileA1.yy",},
+    "parent": {"name":"Rock","path":"sprites/Rock/Rock.yy",},
     "resourceVersion": "1.4",
-    "name": "tf_beach_tileA1",
+    "name": "Rock",
     "tags": [],
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"488d9fb6-0a1b-4480-bc99-1f182aff779c","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"beae63bb-b97b-4782-9ef7-b80f303e2ba1","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Tile Sets",
-    "path": "folders/Tile Sets.yy",
+    "name": "Sprites",
+    "path": "folders/Sprites.yy",
   },
   "resourceVersion": "1.0",
-  "name": "tf_beach_tileA1",
+  "name": "Rock",
   "tags": [],
   "resourceType": "GMSprite",
 }

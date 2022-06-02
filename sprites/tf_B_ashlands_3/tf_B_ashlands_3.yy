@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Tilesets",
-    "path": "folders/Sprites/Tilesets.yy",
+    "name": "Tile Sets",
+    "path": "folders/Tile Sets.yy",
   },
   "resourceVersion": "1.0",
   "name": "tf_B_ashlands_3",

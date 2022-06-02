@@ -13,7 +13,7 @@ function enemyStateIdle(){
 
 
 
-if (point_distance(x, y, target.x, target.y) <= aggroRange) {
+if (point_distance(x, y, target.x, target.y) <= aggroRange and target.currentDimension = currentDimension) {
 	banditState = enemyStateChasing
 	
 }

@@ -15,7 +15,7 @@ attackConfig =
 x : x + attackOffset,
 y : y,
 layer: layer,
-dimension : Current_Dimension
+dimension : currentDimension
 }
 
 if keyGrenade {
@@ -27,23 +27,26 @@ ammo -= 1
 
 
 if stamina > 20 {
-if dimensionUp Next_Dimension++
-if dimensionDown Next_Dimension--
+if dimensionUp nextDimension++
+if dimensionDown nextDimension--
 
-if dimensionShiftOne  Next_Dimension = 1
-if dimensionShiftTwo Next_Dimension = 2
-if dimensionShiftThree Next_Dimension = 3
+if dimensionShiftOne  nextDimension = 1
+if dimensionShiftTwo nextDimension = 2
+if dimensionShiftThree nextDimension = 3
 
 }
 
 
-if Next_Dimension > 4 Next_Dimension = 1
-if Next_Dimension < 1 Next_Dimension = 4
-if (Next_Dimension != Current_Dimension) {
+if nextDimension > 4 nextDimension = 1
+if nextDimension < 1 nextDimension = 4
+if (nextDimension != currentDimension) {
 	stamina -= 25
-	ChangeDimension(Next_Dimension)
+	ChangeDimension(nextDimension)
 	
 }
+
+collisionMap = layer_tilemap_get_id(layer_get_id("Dimension_" + string(currentDimension) + "_Col"))
+
 
 
 script_execute(playerState)

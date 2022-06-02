@@ -1,11 +1,11 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function ChangeDimension(dimensionNum){
-	collisionMap = layer_tilemap_get_id(layer_get_id("Dimension_" + string(dimensionNum) + "_Col"))
+	
 
 var layers = layer_get_all()
 
-var enemyLayer = layer_get_id("Enemies_" + string(oPlayer.Current_Dimension))
+var enemyLayer = layer_get_id("Enemies_" + string(oPlayer.currentDimension))
 var enemies = layer_get_all_elements(enemyLayer)
 
 
@@ -39,5 +39,5 @@ for (var i = 0; i < array_length(layers); i++) {
 
 }
 
-oPlayer.Current_Dimension = oPlayer.Next_Dimension
+oPlayer.currentDimension = oPlayer.nextDimension
 }
