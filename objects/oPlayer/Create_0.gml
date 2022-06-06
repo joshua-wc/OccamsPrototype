@@ -14,8 +14,8 @@ playerSpeed = 4
 attackDeceleration = 0.86
 attackOffset = 25
 
-stamina = 40
-maxStamina = 40
+stamina = 4000
+maxStamina = 4000
 staminaRecovering = true
 staminaRecoveryRate = 0.16
 
