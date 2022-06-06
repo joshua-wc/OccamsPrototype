@@ -3,6 +3,9 @@
 
 
 playerState = playerStateIdle
+
+
+
 hp = 10
 maxHp = 10
 

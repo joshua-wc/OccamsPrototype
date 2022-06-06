@@ -2,6 +2,14 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function ChangeDimension(dimensionNum){
 	
+oPlayer.collisionMap = layer_tilemap_get_id(layer_get_id("Dimension_" + string(oPlayer.nextDimension) + "_Col"))
+
+if PlayerCollision()
+{
+	show_debug_message("Can't do that!")
+	oPlayer.nextDimension = oPlayer.currentDimension
+	return false
+}
 
 var layers = layer_get_all()
 

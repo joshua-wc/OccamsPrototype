@@ -5,4 +5,5 @@ collisionMap = layer_tilemap_get_id(layer_get_id("Dimension_" + string(dimension
 x_speed = 0
 y_speed = 0
 
-PlayerCollision()
+colliding = PlayerCollision()
+

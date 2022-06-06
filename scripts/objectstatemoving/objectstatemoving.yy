@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Player State",
-    "path": "folders/Scripts/Player State.yy",
+    "name": "ObjectState",
+    "path": "folders/Scripts/ObjectState.yy",
   },
   "resourceVersion": "1.0",
-  "name": "playerStateAttack",
+  "name": "objectStateMoving",
   "tags": [],
   "resourceType": "GMScript",
 }
