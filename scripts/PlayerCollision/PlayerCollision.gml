@@ -29,6 +29,7 @@ if (place_meeting(x + x_speed, y, oRockMovable))
 	} else {
 		rock.x += x_speed / 2
 		x_speed /= 2
+		y_speed /= 2
 	}
 }
 
@@ -61,6 +62,7 @@ if (place_meeting(x, y + y_speed, oRockMovable))
     _collision = true;
 	} else {
 		rock.y += y_speed / 2
+		x_speed /= 2
 		y_speed /= 2
 	}
 }

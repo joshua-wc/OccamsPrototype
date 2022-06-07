@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-banditState = enemyStateIdle
+patrollerState = enemyPatrollerStateIdle
 aggroRange = 200
 attackRange = 40
 attackDeceleration = 0.85
@@ -18,6 +18,9 @@ canAttack = true
 canBeDamaged = true
 
 target = oPlayer
+
+patrolPath = patrolStraightLine()
+path_start(patrolPath, 2, path_action_reverse, 0)
 
 
 

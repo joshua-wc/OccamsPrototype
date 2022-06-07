@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sBanditIdle",
-    "path": "sprites/sBanditIdle/sBanditIdle.yy",
+    "name": "sBanditRun",
+    "path": "sprites/sBanditRun/sBanditRun.yy",
   },
   "solid": false,
   "visible": true,
@@ -34,7 +34,7 @@
     "path": "folders/Objects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "oBandit",
+  "name": "oBanditPatroller",
   "tags": [],
   "resourceType": "GMObject",
 }

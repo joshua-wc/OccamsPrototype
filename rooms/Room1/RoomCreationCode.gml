@@ -16,9 +16,13 @@ for (var i = 0; i < array_length(layers); i++)
 	for (var j = 0; j < array_length(enemies); j++) 
 	{
 		var enemy = layer_instance_get_instance(enemies[j])
-		with (enemy) number = enemyNumber
+		with (enemy) 
+		{
+			originDimension = real(string_char_at(layerName, 9))
+			currentDimension = real(string_char_at(layerName, 9))
+			number = enemyNumber
 		show_debug_message(enemy)
-		
+		}
 		enemyNumber++
 	}
 	

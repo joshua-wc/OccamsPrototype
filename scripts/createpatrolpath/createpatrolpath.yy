@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "State",
-    "path": "folders/Scripts/State.yy",
+    "name": "Scripts",
+    "path": "folders/Scripts.yy",
   },
   "resourceVersion": "1.0",
-  "name": "enemyStateIdle",
+  "name": "createPatrolPath",
   "tags": [],
   "resourceType": "GMScript",
 }

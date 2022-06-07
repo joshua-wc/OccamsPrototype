@@ -8,6 +8,7 @@ if (imageIndex + imageSpeed >= imageNumber) {
 					case sBanditAttack: {
 						instance_destroy(self.attack)
 						banditState = enemyStateIdle
+						patrollerState = enemyPatrollerStateIdle
 					} 
 					break
 					case sBanditDeath: {
