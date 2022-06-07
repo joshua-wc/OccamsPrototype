@@ -13,3 +13,35 @@ function patrolStraightLine(){
 	
 	return newPath
 }
+
+function patrolRandomPath() {
+	
+	newPath = path_add()
+	
+	var pointCount = irandom_range(2, 10)
+	
+	var currentX = x
+	var currentY = y
+	
+	for (var i = 0; i <= pointCount; i++)
+	{
+		pointX = irandom_range(0, room_width)
+		pointY = irandom_range(0, room_height)
+		
+		obstacle = collision_line(currentX,currentY,pointX,pointY, oRockMovable, false, false)
+	
+	if obstacle != noone 
+	{
+		pointX = obstacle.x + (obstacle.sprite_width / 2)
+		pointY = obstacle.y + (obstacle.sprite_height / 2)
+	}
+	
+	
+	path_add_point(newPath, pointX, pointY, 100)
+	
+	currentX = pointX
+	currentY = pointY
+	}
+	
+	return newPath
+}

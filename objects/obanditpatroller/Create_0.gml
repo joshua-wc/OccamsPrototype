@@ -19,7 +19,7 @@ canBeDamaged = true
 
 target = oPlayer
 
-patrolPath = patrolStraightLine()
+patrolPath = patrolRandomPath()
 path_start(patrolPath, 2, path_action_reverse, 0)
 
 

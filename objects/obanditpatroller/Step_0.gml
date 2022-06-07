@@ -1,21 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-if hspeed > 0 {
-	image_xscale = -1
-	attackOffset = 18
-} else {
-	image_xscale = 1
-attackOffset = -18	
-}
-
-if x > path_get_x(patrolPath, path_position-path_speed/path_get_length(path_index)) {
-	image_xscale = -1
-	attackOffset = 18
-} else {
-	image_xscale = 1
-attackOffset = -18	
-}
 	
 if hp <= 0 {
 		
@@ -32,6 +17,8 @@ dimension : currentDimension,
 originDimension : originDimension,
 number : number
 }
+
+
 chooseTarget()
 
 script_execute(patrollerState)

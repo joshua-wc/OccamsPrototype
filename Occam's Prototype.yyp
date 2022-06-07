@@ -43,6 +43,7 @@
     {"id":{"name":"Beach_Water","path":"tilesets/Beach_Water/Beach_Water.yy",},"order":3,},
     {"id":{"name":"sBanditIdle","path":"sprites/sBanditIdle/sBanditIdle.yy",},"order":0,},
     {"id":{"name":"oPlayerSwordHitbox","path":"objects/oPlayerSwordHitbox/oPlayerSwordHitbox.yy",},"order":0,},
+    {"id":{"name":"FaceDirection","path":"scripts/FaceDirection/FaceDirection.yy",},"order":13,},
     {"id":{"name":"oWarpField","path":"objects/oWarpField/oWarpField.yy",},"order":6,},
     {"id":{"name":"DimensionShift","path":"scripts/DimensionShift/DimensionShift.yy",},"order":2,},
     {"id":{"name":"sPlayerThrow","path":"sprites/sPlayerThrow/sPlayerThrow.yy",},"order":5,},

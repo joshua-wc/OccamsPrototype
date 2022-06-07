@@ -6,16 +6,9 @@ function enemyPatrollerStateIdle(){
 	image_speed = 1
 	aggroRange = 200
 	
-	
+	faceDirectionPath()
 	
 
-if x > path_get_x(patrolPath, path_position-path_speed/path_get_length(path_index)) {
-	image_xscale = -1
-	attackOffset = 18
-} else {
-	image_xscale = 1
-attackOffset = -18	
-}
 
 
 if (point_distance(x, y, target.x, target.y) <= aggroRange and target.currentDimension = currentDimension) {
@@ -34,6 +27,8 @@ if point_distance(originX, originY, x, y ) > 8 {
 function enemyPatrollerStateChasing(){
 	
 path_end()
+
+faceDirectionRunning()
 	
 image_speed = 1
 sprite_index = sBanditRun
@@ -81,6 +76,7 @@ checkAnimEnd(sprite_index, image_index, image_speed, image_number)
 
 function enemyPatrollerStateReturning(){
 sprite_index = sBanditRun
+faceDirectionRunning()
 	image_speed = 0.5
 	aggroRange = 200
 	move_towards_point(originX, originY, 1)
