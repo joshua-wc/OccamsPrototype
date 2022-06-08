@@ -8,13 +8,22 @@ function enemyPatrollerStateIdle(){
 	
 	faceDirectionRunning(attackOffset)
 	
-	if path_position = 1 or path_position = undefined 
-		sprite_index = sBanditIdle;
+	if (path_position = 1 and stopped = false)
+	{
+		
+
+		alarm_set(2,45)
+		stopped = true
+	}
+	
+	if stopped = true sprite_index = sBanditIdle
 
 
 if (point_distance(x, y, target.x, target.y) <= aggroRange and target.currentDimension = currentDimension) {
 	
 	patrollerState = enemyPatrollerStateChasing
+	alarm_set(2, -1)
+	alarm_set(2, 1)
 	show_debug_message("Aha!")
 }
 
@@ -71,6 +80,7 @@ if image_index > 4 && canAttack {
 }
 
 oBanditPatroller.alarm[0] = attackDelay
+oBanditPatroller.alarm[2] = 8
 
 checkAnimEnd(sprite_index, image_index, image_speed, image_number)
 

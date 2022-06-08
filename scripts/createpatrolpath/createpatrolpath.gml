@@ -46,17 +46,30 @@ function patrolRandomPath() {
 	return newPath
 }
 
-/*function randomGridPath() {
+function randomGridPath() {
 	
-	newPath = path_add()
+	path_delete(newPath)
+		newPath = path_add()
+		
+		targetX = 0
+		targetY = 0
+		
+		repeat(20)
+		{
+			targetX = irandom_range(x - 200, x + 200)
+			targetY = irandom_range(y - 200, y + 200)
+			
+			if (collision_point(targetX, targetY, oRockMovable, false, true) = noone)
+			{
+				break;
+			}
+		}
 	
-	targetX = irandom_range(x - 200, x + 200)
-	targetY = irandom_range(y - 200, y + 200)
+	
 	
 	mp_grid_path(oGridSetup.grid, newPath, x, y, targetX, targetY, 1)
 	
 	path_start(newPath, 2, path_action_stop, 1)
-	
-	return newPath
+		
 	
 }
