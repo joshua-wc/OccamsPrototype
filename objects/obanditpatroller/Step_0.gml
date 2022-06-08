@@ -19,6 +19,7 @@ number : number
 }
 
 
+
 chooseTarget()
 
 script_execute(patrollerState)

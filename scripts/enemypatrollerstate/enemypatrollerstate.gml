@@ -6,7 +6,7 @@ function enemyPatrollerStateIdle(){
 	image_speed = 1
 	aggroRange = 200
 	
-	faceDirectionPath()
+	faceDirectionRunning(attackOffset)
 	
 
 
@@ -28,7 +28,7 @@ function enemyPatrollerStateChasing(){
 	
 path_end()
 
-faceDirectionRunning()
+faceDirectionRunning(attackOffset)
 	
 image_speed = 1
 sprite_index = sBanditRun
@@ -76,7 +76,7 @@ checkAnimEnd(sprite_index, image_index, image_speed, image_number)
 
 function enemyPatrollerStateReturning(){
 sprite_index = sBanditRun
-faceDirectionRunning()
+faceDirectionRunning(attackOffset)
 	image_speed = 0.5
 	aggroRange = 200
 	move_towards_point(originX, originY, 1)
