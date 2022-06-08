@@ -18,7 +18,7 @@ function patrolRandomPath() {
 	
 	newPath = path_add()
 	
-	var pointCount = irandom_range(2, 10)
+	var pointCount = irandom_range(2, 5)
 	
 	var currentX = x
 	var currentY = y
@@ -44,4 +44,19 @@ function patrolRandomPath() {
 	}
 	
 	return newPath
+}
+
+/*function randomGridPath() {
+	
+	newPath = path_add()
+	
+	targetX = irandom_range(x - 200, x + 200)
+	targetY = irandom_range(y - 200, y + 200)
+	
+	mp_grid_path(oGridSetup.grid, newPath, x, y, targetX, targetY, 1)
+	
+	path_start(newPath, 2, path_action_stop, 1)
+	
+	return newPath
+	
 }

@@ -19,8 +19,9 @@ canBeDamaged = true
 
 target = oPlayer
 
-patrolPath = patrolRandomPath()
-path_start(patrolPath, 2, path_action_reverse, 0)
+chasePath = path_add()
+alarm_set(2, 1)
+
 
 
 

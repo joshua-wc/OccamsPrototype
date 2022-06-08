@@ -8,7 +8,8 @@ function enemyPatrollerStateIdle(){
 	
 	faceDirectionRunning(attackOffset)
 	
-
+	if path_position = 1 or path_position = undefined 
+		sprite_index = sBanditIdle;
 
 
 if (point_distance(x, y, target.x, target.y) <= aggroRange and target.currentDimension = currentDimension) {
@@ -16,10 +17,7 @@ if (point_distance(x, y, target.x, target.y) <= aggroRange and target.currentDim
 	show_debug_message("Aha!")
 }
 
-if point_distance(originX, originY, x, y ) > 8 {
-	patrollerState = enemyPatrollerStateReturning
 
-}
 	
 
 }
@@ -33,9 +31,13 @@ faceDirectionRunning(attackOffset)
 image_speed = 1
 sprite_index = sBanditRun
 aggroRange = 400
-if point_distance(x, y, target.x, target.y) > 20 move_towards_point(target.x, target.y, 2)
+//if point_distance(x, y, target.x, target.y) > 20 move_towards_point(target.x, target.y, 2)
+
+mp_grid_path(oGridSetup, chasePath, x, y, oPlayer.x, oPlayer.y, 1)
+path_start(chasePath, 3, path_action_stop, 1)
 
 if point_distance(x, y, target.x, target.y) > aggroRange or target.currentDimension != currentDimension {
+	path_end()
 	patrollerState = enemyPatrollerStateIdle
 }
 
@@ -82,7 +84,7 @@ faceDirectionRunning(attackOffset)
 	move_towards_point(originX, originY, 1)
 	if point_distance(x, y, originX, originY) <= 2 
 	{
-		path_start(patrolPath, 2, path_action_reverse, 0)
+		
 		patrollerState = enemyPatrollerStateIdle
 	}
 	
