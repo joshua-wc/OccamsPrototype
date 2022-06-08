@@ -20,6 +20,7 @@ canBeDamaged = true
 target = oPlayer
 
 chasePath = path_add()
+newPath = path_add()
 alarm_set(2, 1)
 
 

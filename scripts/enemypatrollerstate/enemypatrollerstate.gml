@@ -13,6 +13,7 @@ function enemyPatrollerStateIdle(){
 
 
 if (point_distance(x, y, target.x, target.y) <= aggroRange and target.currentDimension = currentDimension) {
+	
 	patrollerState = enemyPatrollerStateChasing
 	show_debug_message("Aha!")
 }
@@ -24,7 +25,7 @@ if (point_distance(x, y, target.x, target.y) <= aggroRange and target.currentDim
 
 function enemyPatrollerStateChasing(){
 	
-path_end()
+
 
 faceDirectionRunning(attackOffset)
 	
@@ -33,8 +34,7 @@ sprite_index = sBanditRun
 aggroRange = 400
 //if point_distance(x, y, target.x, target.y) > 20 move_towards_point(target.x, target.y, 2)
 
-mp_grid_path(oGridSetup, chasePath, x, y, oPlayer.x, oPlayer.y, 1)
-path_start(chasePath, 3, path_action_stop, 1)
+
 
 if point_distance(x, y, target.x, target.y) > aggroRange or target.currentDimension != currentDimension {
 	path_end()
@@ -76,24 +76,7 @@ checkAnimEnd(sprite_index, image_index, image_speed, image_number)
 
 }
 
-function enemyPatrollerStateReturning(){
-sprite_index = sBanditRun
-faceDirectionRunning(attackOffset)
-	image_speed = 0.5
-	aggroRange = 200
-	move_towards_point(originX, originY, 1)
-	if point_distance(x, y, originX, originY) <= 2 
-	{
-		
-		patrollerState = enemyPatrollerStateIdle
-	}
-	
-	if (point_distance(x, y, target.x, target.y) <= aggroRange) {
-	patrollerState = enemyPatrollerStateChasing
-	
-}
-	
-}
+
 
 function enemyPatrollerStateDeath(){
 	hspeed = 0
