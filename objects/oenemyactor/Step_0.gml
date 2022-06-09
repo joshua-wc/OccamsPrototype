@@ -1,10 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
-
-	
 if hp <= 0 {
 		
-		patrollerState = enemyPatrollerStateDeath
+		state = enemyStateDeath
 	}
 
 
@@ -18,11 +16,10 @@ originDimension : originDimension,
 number : number
 }
 
-
+faceDirectionRunning(attackOffset)
 
 chooseTarget()
 
-script_execute(patrollerState)
+script_execute(state)
 
 checkDimension(currentDimension)
-

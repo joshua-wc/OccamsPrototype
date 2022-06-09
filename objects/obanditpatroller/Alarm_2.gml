@@ -1,13 +1,13 @@
 /// @description path regeneration
 // You can write your code in this editor
 
-if patrollerState = enemyPatrollerStateIdle
+if state = enemyPatrollerStateIdle
 {
 	randomGridPath()
 	stopped = false	
 }
 
-if patrollerState = enemyPatrollerStateChasing
+if state = enemyPatrollerStateChasing
 {
 	path_delete(newPath)
 	newPath = path_add()

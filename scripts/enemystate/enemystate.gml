@@ -14,12 +14,12 @@ function enemyStateIdle(){
 
 
 if (point_distance(x, y, target.x, target.y) <= aggroRange and target.currentDimension = currentDimension) {
-	banditState = enemyStateChasing
+	state = enemyStateChasing
 	
 }
 
 if point_distance(originX, originY, x, y ) > 8 {
-	banditState = enemyStateReturning
+	state = enemyStateReturning
 
 }
 	
@@ -36,12 +36,12 @@ aggroRange = 400
 if point_distance(x, y, target.x, target.y) > 20 move_towards_point(target.x, target.y, 2)
 
 if point_distance(x, y, target.x, target.y) > aggroRange or target.currentDimension != currentDimension {
-	banditState = enemyStateIdle
+	state = enemyStateIdle
 }
 
 if (point_distance(x, y, target.x, target.y) < attackRange && canAttack) {
 	image_index = 0
-	banditState = enemyStateAttacking
+	state = enemyStateAttacking
 }
 
 
@@ -51,7 +51,7 @@ if (point_distance(x, y, target.x, target.y) < attackRange && canAttack) {
 function enemyStateAttacking(){	
 	
 	if !inPlayerDimension {
-		banditState = enemyStateIdle
+		state = enemyStateIdle
 		exit
 	}
 	
@@ -79,10 +79,10 @@ sprite_index = sBanditRun
 	image_speed = 0.5
 	aggroRange = 200
 	move_towards_point(originX, originY, 1)
-	if point_distance(x, y, originX, originY) <= 8 banditState = enemyStateIdle
+	if point_distance(x, y, originX, originY) <= 8 state = enemyStateIdle
 	
 	if (point_distance(x, y, target.x, target.y) <= aggroRange) {
-	banditState = enemyStateChasing
+	state = enemyStateChasing
 	
 }
 	

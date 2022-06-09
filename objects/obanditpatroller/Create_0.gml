@@ -1,23 +1,11 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-patrollerState = enemyPatrollerStateIdle
-aggroRange = 200
-attackRange = 40
-attackDeceleration = 0.85
-attackDelay = 40
-attackOffset = 18
-originX = x
-originY = y
+event_inherited()
 
-hp = 5
+state = enemyPatrollerStateIdle
+attackDeceleration = 0.6
 
-inPlayerDimension = false
-
-canAttack = true
-canBeDamaged = true
-
-target = oPlayer
 
 alarm_set(3,4)
 

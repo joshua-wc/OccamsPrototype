@@ -1,17 +1,11 @@
 {
-  "spriteId": {
-    "name": "sBanditRun",
-    "path": "sprites/sBanditRun/sBanditRun.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": {
-    "name": "oEnemyActor",
-    "path": "objects/oEnemyActor/oEnemyActor.yy",
-  },
+  "parentObjectId": null,
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
@@ -26,9 +20,9 @@
   "physicsShapePoints": [],
   "eventList": [
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":2,"eventType":2,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":3,"eventType":2,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":2,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":1,"eventType":2,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
@@ -37,7 +31,7 @@
     "path": "folders/Objects/Enemies.yy",
   },
   "resourceVersion": "1.0",
-  "name": "oBanditPatroller",
+  "name": "oEnemyActor",
   "tags": [],
   "resourceType": "GMObject",
 }

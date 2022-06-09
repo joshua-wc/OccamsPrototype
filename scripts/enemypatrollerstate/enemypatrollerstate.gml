@@ -6,7 +6,7 @@ function enemyPatrollerStateIdle(){
 	image_speed = 1
 	aggroRange = 200
 	
-	faceDirectionRunning(attackOffset)
+	
 	
 	if (path_position = 1 and stopped = false)
 	{
@@ -21,7 +21,7 @@ function enemyPatrollerStateIdle(){
 
 if (point_distance(x, y, target.x, target.y) <= aggroRange and target.currentDimension = currentDimension) {
 	
-	patrollerState = enemyPatrollerStateChasing
+	state = enemyPatrollerStateChasing
 	alarm_set(2, -1)
 	alarm_set(2, 1)
 	show_debug_message("Aha!")
@@ -36,7 +36,7 @@ function enemyPatrollerStateChasing(){
 	
 
 
-faceDirectionRunning(attackOffset)
+
 	
 image_speed = 1
 sprite_index = sBanditRun
@@ -47,12 +47,12 @@ aggroRange = 400
 
 if point_distance(x, y, target.x, target.y) > aggroRange or target.currentDimension != currentDimension {
 	path_end()
-	patrollerState = enemyPatrollerStateIdle
+	state = enemyPatrollerStateIdle
 }
 
 if (point_distance(x, y, target.x, target.y) < attackRange && canAttack) {
 	image_index = 0
-	patrollerState = enemyPatrollerStateAttacking
+	state = enemyPatrollerStateAttacking
 }
 
 
@@ -62,7 +62,7 @@ if (point_distance(x, y, target.x, target.y) < attackRange && canAttack) {
 function enemyPatrollerStateAttacking(){	
 	
 	if !inPlayerDimension {
-		patrollerState = enemyPatrollerStateIdle
+		state = enemyPatrollerStateIdle
 		exit
 	}
 	
