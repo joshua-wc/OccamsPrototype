@@ -36,13 +36,14 @@ if dimensionShiftThree nextDimension = 3
 
 }
 
+if shift = false view_visible[1] = false
 
 if nextDimension > 4 nextDimension = 1
 if nextDimension < 1 nextDimension = 4
-if (nextDimension != currentDimension) {
-	stamina -= 25
-	ChangeDimension(nextDimension)
-	
+if (nextDimension != currentDimension and shift = false) {
+	view_visible[1] = true
+	alarm[0] = 120
+	shift = true
 }
 
 collisionMap = layer_tilemap_get_id(layer_get_id("Dimension_" + string(currentDimension) + "_Col"))

@@ -8,6 +8,7 @@ if PlayerCollision()
 {
 	show_debug_message("Can't do that!")
 	oPlayer.nextDimension = oPlayer.currentDimension
+	oPlayer.shift = false
 	return false
 }
 
@@ -48,4 +49,6 @@ for (var i = 0; i < array_length(layers); i++) {
 }
 
 oPlayer.currentDimension = oPlayer.nextDimension
+oPlayer.shift = false
+
 }

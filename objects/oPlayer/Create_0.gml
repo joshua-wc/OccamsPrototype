@@ -23,5 +23,6 @@ canAttack = true
 
 ammo = 300
 
+shift = false
 
 
