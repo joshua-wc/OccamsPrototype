@@ -6,9 +6,9 @@ view_enabled = true
 view_visible[0] = true
 
 view_visible[1] = false
-view_xport[1] = oPlayer.x + 100
-view_yport[1] = oPlayer.y
-view_wport[1] = 150
+view_xport[1] = 0
+view_yport[1] = 0
+view_wport[1] = 210
 view_hport[1] = 150
 
 view_xport[0] = 0
@@ -17,7 +17,10 @@ view_wport[0] = 1360
 view_hport[0] = 768
 
 view_camera[0] = camera_create_view(0,0,view_wport[0] * 0.6, view_hport[0] * 0.6, 0, oPlayer, -1, -1, 400, 250)
-view_camera[1] = camera_create_view(0,0,view_wport[1], view_hport[1])
+global.previewCamera = camera_create_view(0,0,view_wport[1], view_hport[1])
+view_camera[1] = global.previewCamera
+
+show_debug_message(string(view_get_camera(1)))
 
 // Set window to correct size
 
@@ -29,8 +32,7 @@ window_set_rectangle(_xpos, _ypos, 1360, 768);
 
 surface_resize(application_surface, 1360, 768)
 
-global.previewSurface = surface_create(150, 150)
-view_surface_id[1] = global.previewSurface
+
 
 
 /*global.mainCam = view_camera[0];
@@ -42,6 +44,11 @@ yTo = ystart;*/
 }
 
 function cameraStep(){
+	
+	if(view_visible[1])
+	{
+		camera_set_view_pos(global.previewCamera, oPlayer.x, oPlayer.y)
+	}
 	
 	//Update destination
 /*if (instance_exists(follow))

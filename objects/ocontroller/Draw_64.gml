@@ -15,7 +15,3 @@ if (instance_exists(oPlayer)) {
 	max(0, oPlayer.hp/oPlayer.maxHp), 1, 0, c_white, 1)
 }
 
-if (view_visible[1] = true)
-{
-draw_surface(global.previewSurface, oPlayer.x + 75, oPlayer.y)
-}
