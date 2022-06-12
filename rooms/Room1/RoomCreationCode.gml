@@ -1,9 +1,11 @@
-layers = layer_get_all()
+var layers = layer_get_all()
 
 var enemyNumber = 1
 
 for (var i = 0; i < array_length(layers); i++) 
 {
+	layer_script_begin(layers[i], layerScriptBegin)
+	layer_script_end(layers[i], layerScriptEnd)
 	
 	var layerName = layer_get_name(layers[i])
 	
