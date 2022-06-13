@@ -5,7 +5,7 @@ function cameraSetup(){
 view_enabled = true
 view_visible[0] = true
 
-view_visible[1] = false
+view_visible[1] = true
 view_xport[1] = 0
 view_yport[1] = 0
 view_wport[1] = 210

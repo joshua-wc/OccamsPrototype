@@ -31,7 +31,7 @@ if (view_visible[1] = true)
 	
 }
 	}*/
-draw_surface(previewSurface, oPlayer.x -100, oPlayer.y - 70)
+//draw_surface(previewSurface, oPlayer.x -100, oPlayer.y - 70)
 shifting = false
 
 }
