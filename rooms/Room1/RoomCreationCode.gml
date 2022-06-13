@@ -1,4 +1,4 @@
-layers = layer_get_all()
+var layers = layer_get_all()
 
 var enemyNumber = 1
 
