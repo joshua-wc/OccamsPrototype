@@ -34,26 +34,26 @@ image_speed = 1
 sprite_index = sBanditRun
 aggroRange = 400
 
-var _dir, _accel;
+/*var _dir, _accel;
 
 _dir = point_direction(x, y, oPlayer.x, oPlayer.y)
 _accel[0] = lengthdir_x(accelForce, _dir)
-_accel[1] = lengthdir_y(accelForce, _dir)
+_accel[1] = lengthdir_y(accelForce, _dir)*/
 
 
 
 if point_distance(x, y, target.x, target.y) > 20
 {
-	//move_towards_point(target.x, target.y, chaseSpeed)
 	
+	addVector(steeringForce, seekForce([oPlayer.x, oPlayer.y]))
 	
-	setVector(acceleration, _accel)
-	addVector(velocity, acceleration)
-
-	show_debug_message(string(velocity))
-	limitVectorMagnitude(velocity, 3)
+	//setVector(acceleration, _accel)
+	addVector(velocity, steeringForce)
+	limitVectorMagnitude(velocity, maxSpeed)
+	addVector(position, velocity)
+	setVector(steeringForce, [0,0])
 	
-	vectorToSpeed(velocity)
+	vectorToSpeed(position)
 }
 
 if point_distance(x, y, target.x, target.y) > aggroRange or target.currentDimension != currentDimension {

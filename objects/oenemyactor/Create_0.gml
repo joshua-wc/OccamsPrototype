@@ -15,10 +15,13 @@ walkSpeed = 2
 
 moveDirection = array_create(2)
 
-velocity = array_create(2)
-acceleration = array_create(2)
-accelForce = 0.1
+position = array_create(2)
 
+velocity = array_create(2)
+steeringForce = array_create(2)
+
+maxSpeed = 3
+maxForce = 0.1
 
 
 inPlayerDimension = false

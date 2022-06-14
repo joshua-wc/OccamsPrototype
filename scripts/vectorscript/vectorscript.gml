@@ -1,8 +1,8 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function vectorToSpeed(vector) {
-	x += vector[0]
-	y += vector[1]
+	x = vector[0]
+	y = vector[1]
 }
 
 function setVector(currentVector, newVector){
@@ -55,4 +55,13 @@ function limitVectorMagnitude(vector, limit) {
 	{
 		setVectorMagnitude(vector, limit)
 	}
+}
+
+function negateVector(vector){
+	vector[@0] = -vector[0]
+	vector[@1] = -vector[1]
+}
+
+function getVectorDirection(vector){
+	return point_direction(0,0,vector[0],vector[1])
 }

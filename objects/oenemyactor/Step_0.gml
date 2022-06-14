@@ -16,7 +16,8 @@ originDimension : originDimension,
 number : number
 }
 
-
+position[0] = x
+position[1] = y
 
 faceDirectionRunning()
 
