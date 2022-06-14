@@ -34,7 +34,27 @@ image_speed = 1
 sprite_index = sBanditRun
 aggroRange = 400
 
-if point_distance(x, y, target.x, target.y) > 20 move_towards_point(target.x, target.y, chaseSpeed)
+var _dir, _accel;
+
+_dir = point_direction(x, y, oPlayer.x, oPlayer.y)
+_accel[0] = lengthdir_x(accelForce, _dir)
+_accel[1] = lengthdir_y(accelForce, _dir)
+
+
+
+if point_distance(x, y, target.x, target.y) > 20
+{
+	//move_towards_point(target.x, target.y, chaseSpeed)
+	
+	
+	setVector(acceleration, _accel)
+	addVector(velocity, acceleration)
+
+	show_debug_message(string(velocity))
+	limitVectorMagnitude(velocity, 3)
+	
+	vectorToSpeed(velocity)
+}
 
 if point_distance(x, y, target.x, target.y) > aggroRange or target.currentDimension != currentDimension {
 	state = enemyStateIdle

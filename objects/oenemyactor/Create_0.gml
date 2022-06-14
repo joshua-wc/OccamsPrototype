@@ -15,6 +15,12 @@ walkSpeed = 2
 
 moveDirection = array_create(2)
 
+velocity = array_create(2)
+acceleration = array_create(2)
+accelForce = 0.1
+
+
+
 inPlayerDimension = false
 
 canAttack = true
