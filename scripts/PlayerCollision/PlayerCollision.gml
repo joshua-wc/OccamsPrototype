@@ -76,3 +76,8 @@ y += y_speed;
 return _collision
 
 }
+
+function enemyCollision()
+{
+	
+}

@@ -45,7 +45,7 @@ if (nextDimension != currentDimension) {
 	
 }
 
-collisionMap = layer_tilemap_get_id(layer_get_id("Dimension_" + string(currentDimension) + "_Col"))
+
 
 
 
