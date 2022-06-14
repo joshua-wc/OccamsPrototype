@@ -16,7 +16,7 @@ originDimension : originDimension,
 number : number
 }
 
-faceDirectionRunning(attackOffset)
+faceDirectionRunning()
 
 chooseTarget()
 

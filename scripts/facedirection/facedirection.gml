@@ -4,11 +4,11 @@ function faceDirectionRunning(attackInfo){
 
 	if (direction <= 90 or direction >= 270)
 	{
-		attackOffset = attackInfo
+		attackOffset = 18
 		image_xscale = -1
 	} else if (direction >= 91 and direction <= 269)
 	{
-		attackOffset = attackInfo * -1
+		attackOffset = -18
 		image_xscale = 1
 	}
 

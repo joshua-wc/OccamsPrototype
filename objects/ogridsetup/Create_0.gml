@@ -6,7 +6,7 @@ grid = mp_grid_create(0,0, room_width/16, room_height/16, 16, 16)
 var tilesW = room_width / 16
 var tilesH = room_height / 16
 
-var layerId = layer_get_id("Dimension_1_Col")
+var layerId = layer_get_id("Dimension_" + string(oPlayer.currentDimension) + "_Col")
 var mapId = layer_tilemap_get_id(layerId)
 
 for (var i = 0; i < tilesW; i++)
@@ -23,4 +23,3 @@ for (var i = 0; i < tilesW; i++)
 	}
 }
 
-mp_grid_add_instances(grid, oRockMovable, 0)

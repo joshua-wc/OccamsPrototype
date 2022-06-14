@@ -4,6 +4,28 @@ function ChangeDimension(dimensionNum){
 	
 oPlayer.collisionMap = layer_tilemap_get_id(layer_get_id("Dimension_" + string(oPlayer.nextDimension) + "_Col"))
 
+mp_grid_clear_all(oGridSetup.grid)	
+	
+var tilesW = room_width / 16
+var tilesH = room_height / 16
+
+var layerId = layer_get_id("Dimension_" + string(oPlayer.nextDimension) + "_Col")
+var mapId = layer_tilemap_get_id(layerId)
+
+for (var i = 0; i < tilesW; i++)
+{
+	for (var j = 0; j < tilesH; j++)
+	{
+		
+		var tilesToCheck = tilemap_get(mapId, i, j)
+		if tilesToCheck != 0
+		{
+			mp_grid_add_cell(oGridSetup.grid, i, j)
+		}
+			
+	}
+}
+
 if PlayerCollision()
 {
 	show_debug_message("Can't do that!")
