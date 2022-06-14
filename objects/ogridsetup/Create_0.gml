@@ -7,7 +7,7 @@ var tilesW = room_width / 16
 var tilesH = room_height / 16
 
 var layerId = layer_get_id("Dimension_" + string(oPlayer.currentDimension) + "_Col")
-var mapId = layer_tilemap_get_id(layerId)
+mapId = layer_tilemap_get_id(layerId)
 
 for (var i = 0; i < tilesW; i++)
 {

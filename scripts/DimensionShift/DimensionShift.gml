@@ -4,6 +4,14 @@ function ChangeDimension(dimensionNum){
 	
 oPlayer.collisionMap = layer_tilemap_get_id(layer_get_id("Dimension_" + string(oPlayer.nextDimension) + "_Col"))
 
+if PlayerCollision()
+{
+	show_debug_message("Can't do that!")
+	oPlayer.collisionMap = layer_tilemap_get_id(layer_get_id("Dimension_" + string(oPlayer.currentDimension) + "_Col"))
+	oPlayer.nextDimension = oPlayer.currentDimension
+	return false
+}
+
 mp_grid_clear_all(oGridSetup.grid)	
 	
 var tilesW = room_width / 16
@@ -26,12 +34,7 @@ for (var i = 0; i < tilesW; i++)
 	}
 }
 
-if PlayerCollision()
-{
-	show_debug_message("Can't do that!")
-	oPlayer.nextDimension = oPlayer.currentDimension
-	return false
-}
+
 
 var layers = layer_get_all()
 

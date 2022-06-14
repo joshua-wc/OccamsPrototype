@@ -10,6 +10,10 @@ originX = x
 originY = y
 
 hp = 5
+chaseSpeed = 3
+walkSpeed = 2
+
+moveDirection = array_create(2)
 
 inPlayerDimension = false
 

@@ -16,10 +16,14 @@ originDimension : originDimension,
 number : number
 }
 
+
+
 faceDirectionRunning()
 
 chooseTarget()
-
+enemyCollision()
 script_execute(state)
+
+chaseSpeed = 3
 
 checkDimension(currentDimension)
