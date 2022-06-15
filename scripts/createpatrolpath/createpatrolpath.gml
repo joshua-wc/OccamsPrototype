@@ -51,8 +51,8 @@ function randomGridPath() {
 	path_delete(newPath)
 		newPath = path_add()
 		
-		targetX = 0
-		targetY = 0
+		var targetX = 0
+		var targetY = 0
 		
 		repeat(20)
 		{

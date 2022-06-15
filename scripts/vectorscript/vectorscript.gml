@@ -4,16 +4,43 @@ function vectorToSpeed(vector) {
 	var x_speed = x + (vector[0] - x)
 	var y_speed = y + (vector[1] - y)
 	
+	var targetX = 0
+	var targetY = 0
+	
+	
 	if (tilemap_get_at_pixel(collisionMap, x_speed, y))
 	{
-	
-		vector[@0] = x
+		repeat(20)
+		{
+			targetX = irandom_range(x - 1, x + 1)
+			
+			
+			if (!tilemap_get_at_pixel(oGridSetup.mapId, targetX, y))
+			{
+				break;
+			} else 
+			{
+				targetX = x
+			}
+		}
+		vector[@0] = targetX
 	}
 	
 	if (tilemap_get_at_pixel(collisionMap, x, y_speed))
 	{
-	
-		vector[@1] = y
+		repeat(10)
+		{
+			targetY = irandom_range(y - 0.1, y + 0.1)
+			
+			if (!tilemap_get_at_pixel(oGridSetup.mapId, x, targetY))
+			{
+				break;
+			} else 
+			{
+				targetY = y
+			}
+		}
+		vector[@1] = targetY
 	}
 	
 	x = vector[0]
