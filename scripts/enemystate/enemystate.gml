@@ -34,27 +34,7 @@ image_speed = 1
 sprite_index = sBanditRun
 aggroRange = 400
 
-/*var _dir, _accel;
 
-_dir = point_direction(x, y, oPlayer.x, oPlayer.y)
-_accel[0] = lengthdir_x(accelForce, _dir)
-_accel[1] = lengthdir_y(accelForce, _dir)*/
-
-
-
-if point_distance(x, y, target.x, target.y) > 20
-{
-	
-	addVector(steeringForce, seekForce([oPlayer.x, oPlayer.y]))
-	
-	//setVector(acceleration, _accel)
-	addVector(velocity, steeringForce)
-	limitVectorMagnitude(velocity, maxSpeed)
-	addVector(position, velocity)
-	setVector(steeringForce, [0,0])
-	
-	vectorToSpeed(position)
-}
 
 if point_distance(x, y, target.x, target.y) > aggroRange or target.currentDimension != currentDimension {
 	state = enemyStateIdle
@@ -66,6 +46,27 @@ if (point_distance(x, y, target.x, target.y) < attackRange && canAttack) {
 }
 
 
+	if (keyboard_check(vk_space))
+	{
+		addVector(steeringForce, evadeForce())
+	} else {
+		addVector(steeringForce, arriveForce([oPlayer.x, oPlayer.y], 50))
+	}
+	
+	
+	
+	addVector(velocity, steeringForce)
+	limitVectorMagnitude(velocity, maxSpeed)
+	addVector(position, velocity)
+	setVector(steeringForce, [0,0])
+	show_debug_message(position)
+	vectorToSpeed(position)
+	show_debug_message(string(vspeed))
+	faceDirectionChasing()
+
+
+
+
 
 }
 
@@ -75,6 +76,7 @@ function enemyStateAttacking(){
 		state = enemyStateIdle
 		exit
 	}
+	faceDirectionChasing()
 	
 sprite_index = sBanditAttack
 

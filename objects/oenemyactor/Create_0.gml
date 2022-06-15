@@ -2,7 +2,7 @@
 // You can write your code in this editor
 state = enemyStateIdle
 aggroRange = 200
-attackRange = 40
+attackRange = 25
 attackDeceleration = 0.85
 attackDelay = 40
 attackOffset = 18
@@ -30,3 +30,4 @@ canAttack = true
 canBeDamaged = true
 
 target = oPlayer
+

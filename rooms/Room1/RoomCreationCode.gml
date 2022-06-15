@@ -19,9 +19,10 @@ for (var i = 0; i < array_length(layers); i++)
 		with (enemy) 
 		{
 			originDimension = real(string_char_at(layerName, 9))
-			currentDimension = real(string_char_at(layerName, 9))
+			currentDimension = originDimension
+			collisionMap = layer_tilemap_get_id(layer_get_id("Dimension_" + string(originDimension) + "_Col"))
 			number = enemyNumber
-		show_debug_message(enemy)
+	
 		}
 		enemyNumber++
 	}

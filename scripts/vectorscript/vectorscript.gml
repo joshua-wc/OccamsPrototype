@@ -1,6 +1,21 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function vectorToSpeed(vector) {
+	var x_speed = x + (vector[0] - x)
+	var y_speed = y + (vector[1] - y)
+	
+	if (tilemap_get_at_pixel(collisionMap, x_speed, y))
+	{
+	
+		vector[@0] = x
+	}
+	
+	if (tilemap_get_at_pixel(collisionMap, x, y_speed))
+	{
+	
+		vector[@1] = y
+	}
+	
 	x = vector[0]
 	y = vector[1]
 }
@@ -64,4 +79,11 @@ function negateVector(vector){
 
 function getVectorDirection(vector){
 	return point_direction(0,0,vector[0],vector[1])
+}
+
+function vectorLengthDir(length, dir){
+	var newVector
+	newVector[0] = lengthdir_x(length, dir)
+	newVector[1] = lengthdir_y(length, dir)
+	return newVector
 }

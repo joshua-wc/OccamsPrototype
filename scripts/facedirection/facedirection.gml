@@ -24,3 +24,15 @@ function faceDirectionRunning(){
 	}
 
 }
+
+function faceDirectionChasing(){
+	var targetPos = point_direction(x, y, oPlayer.x, oPlayer.y)
+	if (targetPos <= 90 || targetPos >= 270)
+	{
+		attackOffset = 18
+		image_xscale = -1
+	} else {
+		attackOffset = -18
+		image_xscale = 1
+	}
+}

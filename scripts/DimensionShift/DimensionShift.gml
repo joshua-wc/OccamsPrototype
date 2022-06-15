@@ -49,6 +49,8 @@ for (var i = 0; i < array_length(enemies); i++) {
 		
 		enemy.layer = layer_get_id("Enemies_" + string(dimensionNum))
 		enemy.currentDimension = dimensionNum
+		enemy.collisionMap = layer_tilemap_get_id(layer_get_id("Dimension_" + string(dimensionNum) + "_Col"))
+
 	}
 	
 }
