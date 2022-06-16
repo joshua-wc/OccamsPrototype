@@ -51,15 +51,15 @@ function randomGridPath() {
 	path_delete(newPath)
 		newPath = path_add()
 		
-		targetX = 0
-		targetY = 0
+		var targetX = 0
+		var targetY = 0
 		
 		repeat(20)
 		{
 			targetX = irandom_range(x - 200, x + 200)
 			targetY = irandom_range(y - 200, y + 200)
 			
-			if (collision_point(targetX, targetY, oRockMovable, false, true) = noone)
+			if (!tilemap_get_at_pixel(oGridSetup.mapId, targetX, targetY))
 			{
 				break;
 			}
@@ -69,7 +69,7 @@ function randomGridPath() {
 	
 	mp_grid_path(oGridSetup.grid, newPath, x, y, targetX, targetY, 1)
 	
-	path_start(newPath, 2, path_action_stop, 1)
+	path_start(newPath, walkSpeed, path_action_stop, 1)
 		
 	
 }

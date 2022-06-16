@@ -16,10 +16,15 @@ originDimension : originDimension,
 number : number
 }
 
-faceDirectionRunning(attackOffset)
+position[0] = x
+position[1] = y
+
+faceDirectionRunning()
 
 chooseTarget()
-
+enemyCollision()
 script_execute(state)
+
+chaseSpeed = 3
 
 checkDimension(currentDimension)

@@ -11,12 +11,10 @@ if state = enemyPatrollerStateChasing
 {
 	path_delete(newPath)
 	newPath = path_add()
+
 	
-	targetX = oPlayer.x
-	targetY = oPlayer.y
-	
-	mp_grid_path(oGridSetup.grid, newPath, x, y, targetX, targetY, 1)
-	path_start(newPath, 3, path_action_stop, false)
+	mp_grid_path(oGridSetup.grid, newPath, x, y, target.x, target.y, 1)
+	path_start(newPath, chaseSpeed, path_action_stop, false)
 	alarm_set(2, 15)
 }
 	

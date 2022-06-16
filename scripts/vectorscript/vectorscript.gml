@@ -1,0 +1,116 @@
+// Script assets have changed for v2.3.0 see
+// https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
+function vectorToSpeed(vector) {
+	var x_speed = x + (vector[0] - x)
+	var y_speed = y + (vector[1] - y)
+	
+	var targetX = 0
+	var targetY = 0
+	
+	
+	if (tilemap_get_at_pixel(collisionMap, x_speed, y))
+	{
+		repeat(20)
+		{
+			targetX = irandom_range(x - 1, x + 1)
+			
+			
+			if (!tilemap_get_at_pixel(oGridSetup.mapId, targetX, y))
+			{
+				break;
+			} else 
+			{
+				targetX = x
+			}
+		}
+		vector[@0] = targetX
+	}
+	
+	if (tilemap_get_at_pixel(collisionMap, x, y_speed))
+	{
+		repeat(10)
+		{
+			targetY = irandom_range(y - 0.1, y + 0.1)
+			
+			if (!tilemap_get_at_pixel(oGridSetup.mapId, x, targetY))
+			{
+				break;
+			} else 
+			{
+				targetY = y
+			}
+		}
+		vector[@1] = targetY
+	}
+	
+	x = vector[0]
+	y = vector[1]
+}
+
+function setVector(currentVector, newVector){
+	currentVector[@0] = newVector[0]
+	currentVector[@1] = newVector[1]
+	
+}
+
+function addVector(currentVector, newVector){
+	currentVector[@0] += newVector[0]
+	currentVector[@1] += newVector[1]
+	
+}
+
+function subtractVector(currentVector, newVector){
+	currentVector[@0] -= newVector[0]
+	currentVector[@1] -= newVector[1]
+}
+
+function multiplyVector(currentVector, scalar){
+	currentVector[@0] *= scalar
+	currentVector[@1] *= scalar
+}
+
+function divideVector(currentVector, scalar){
+	currentVector[@0] /= scalar
+	currentVector[@1] /= scalar
+}
+
+function getVectorMagnitude(vector) {
+	return sqrt((vector[0] * vector[0]) + (vector[1] * vector[1]))
+}
+
+function normalizeVector(vector) {
+	if ((vector[0] != 0) || (vector[1] != 0))
+	{
+		var _factor = 1/getVectorMagnitude(vector)
+		vector[@0] = _factor * vector[0]
+		vector[@1] = _factor * vector[1]
+	}
+}
+
+function setVectorMagnitude(vector, scalar) {
+	normalizeVector(vector)
+	multiplyVector(vector, scalar)
+}
+
+function limitVectorMagnitude(vector, limit) {
+	if (getVectorMagnitude(vector) > limit)
+	{
+		setVectorMagnitude(vector, limit)
+	}
+}
+
+function negateVector(vector){
+	vector[@0] = -vector[0]
+	vector[@1] = -vector[1]
+}
+
+function getVectorDirection(vector){
+	return point_direction(0,0,vector[0],vector[1])
+}
+
+function vectorLengthDir(length, dir){
+	var newVector
+	newVector[0] = lengthdir_x(length, dir)
+	newVector[1] = lengthdir_y(length, dir)
+	return newVector
+}

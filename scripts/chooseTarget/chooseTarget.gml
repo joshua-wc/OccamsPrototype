@@ -20,7 +20,7 @@ if !instance_exists(target) {
 	target = oPlayer
 }
 
-if target != oPlayer and point_distance(x, y, target.x, target.y) >= point_distance(x, y, oPlayer.x, oPlayer.y) and layer == oPlayer.layer target = oPlayer
+if target != oPlayer and point_distance(x, y, target.x, target.y) >= point_distance(x, y, oPlayer.x, oPlayer.y) and currentDimension == oPlayer.currentDimension target = oPlayer
 
 
 

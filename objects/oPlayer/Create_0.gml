@@ -4,7 +4,7 @@
 
 playerState = playerStateIdle
 
-
+collisionMap = layer_tilemap_get_id(layer_get_id("Dimension_" + string(currentDimension) + "_Col"))
 
 hp = 10
 maxHp = 10
