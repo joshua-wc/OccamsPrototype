@@ -25,8 +25,20 @@ function turretStateAttacking() {
 sprite_index = sBanditAttack
 
 var shootDirection = point_direction(x, y, oPlayer.x, oPlayer.y)
-attackConfig.direction = shootDirection
-attackConfig.speed = bulletSpeed
+
+var attackConfig = 
+{
+x : x + attackOffset,
+y : y,
+layer : layer,
+dimension : currentDimension,
+originDimension : originDimension,
+number : number,
+direction: shootDirection,
+speed: bulletSpeed
+}
+
+
 
 
 

@@ -24,6 +24,7 @@ maxSpeed = 3
 maxForce = 0.1
 
 
+
 inPlayerDimension = false
 
 canAttack = true

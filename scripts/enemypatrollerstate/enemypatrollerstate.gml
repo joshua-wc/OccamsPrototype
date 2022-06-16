@@ -68,7 +68,15 @@ function enemyPatrollerStateAttacking(){
 	
 sprite_index = sBanditAttack
 
-
+var attackConfig = 
+{
+x : x + attackOffset,
+y : y,
+layer : layer,
+dimension : currentDimension,
+originDimension : originDimension,
+number : number
+}
 
 hspeed *= attackDeceleration
 vspeed *= attackDeceleration
