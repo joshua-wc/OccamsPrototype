@@ -33,7 +33,6 @@
     {"id":{"name":"checkAnimEnd","path":"scripts/checkAnimEnd/checkAnimEnd.yy",},"order":4,},
     {"id":{"name":"tf_beach_tileA1","path":"sprites/tf_beach_tileA1/tf_beach_tileA1.yy",},"order":15,},
     {"id":{"name":"Ashlands_Foreground","path":"tilesets/Ashlands_Foreground/Ashlands_Foreground.yy",},"order":7,},
-    {"id":{"name":"takeDamage","path":"scripts/takeDamage/takeDamage.yy",},"order":7,},
     {"id":{"name":"sExplosion","path":"sprites/sExplosion/sExplosion.yy",},"order":6,},
     {"id":{"name":"Beach_Sand","path":"tilesets/Beach_Sand/Beach_Sand.yy",},"order":4,},
     {"id":{"name":"tf_beach_tileB","path":"sprites/tf_beach_tileB/tf_beach_tileB.yy",},"order":16,},

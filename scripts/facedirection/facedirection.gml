@@ -6,21 +6,11 @@ function faceDirectionRunning(){
 	{
 		attackOffset = 18
 		image_xscale = -1
-		moveDirection[0] = 1
 	
 	} else if (direction >= 91 and direction <= 269)
 	{
 		attackOffset = -18
 		image_xscale = 1
-		moveDirection[0] = -1
-	}
-	
-	if (direction >=0 or direction <= 180)
-	{
-		moveDirection[1] = -1
-	} else if (direction >= 181 or direction <= 360)
-	{
-		moveDirection[1] = 1	
 	}
 
 }

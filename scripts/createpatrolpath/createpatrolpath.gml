@@ -1,18 +1,5 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function patrolStraightLine(){
-
-	
-	obstacle = collision_line(x,y,x-room_width,y, oRockMovable, false, false)
-	
-	pathEnd = obstacle != noone ? obstacle.x + (obstacle.sprite_width / 2) : x - 250
-	
-	newPath = path_add()
-	path_insert_point(newPath, 0, x, y, 100)
-	path_add_point(newPath, pathEnd, y, 100)
-	
-	return newPath
-}
 
 function patrolRectangle() {
 	var newPath = path_add()
@@ -25,6 +12,7 @@ function patrolRectangle() {
 	path_start(newPath, walkSpeed, path_action_restart, 1)
 }
 
+/* Old random path code, keeping in case the collision check is useful
 function patrolRandomPath() {
 	
 	newPath = path_add()
@@ -55,12 +43,12 @@ function patrolRandomPath() {
 	}
 	
 	return newPath
-}
+}*/
 
 function randomGridPath() {
 	
 	path_delete(newPath)
-		newPath = path_add()
+	newPath = path_add()
 		
 		var targetX = 0
 		var targetY = 0

@@ -1,47 +1,8 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function vectorToSpeed(vector) {
-	var x_speed = x + (vector[0] - x)
-	var y_speed = y + (vector[1] - y)
 	
-	var targetX = 0
-	var targetY = 0
-	
-	
-	if (tilemap_get_at_pixel(collisionMap, x_speed, y))
-	{
-		repeat(20)
-		{
-			targetX = irandom_range(x - 1, x + 1)
-			
-			
-			if (!tilemap_get_at_pixel(oGridSetup.mapId, targetX, y))
-			{
-				break;
-			} else 
-			{
-				targetX = x
-			}
-		}
-		vector[@0] = targetX
-	}
-	
-	if (tilemap_get_at_pixel(collisionMap, x, y_speed))
-	{
-		repeat(10)
-		{
-			targetY = irandom_range(y - 0.1, y + 0.1)
-			
-			if (!tilemap_get_at_pixel(oGridSetup.mapId, x, targetY))
-			{
-				break;
-			} else 
-			{
-				targetY = y
-			}
-		}
-		vector[@1] = targetY
-	}
+	vectorCollision(vector)
 	
 	x = vector[0]
 	y = vector[1]

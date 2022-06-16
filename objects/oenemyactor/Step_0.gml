@@ -6,9 +6,8 @@ position[1] = y
 faceDirectionRunning()
 
 chooseTarget()
-enemyCollision()
 script_execute(state)
 
 
 
-checkDimension(currentDimension)
+checkDimension()

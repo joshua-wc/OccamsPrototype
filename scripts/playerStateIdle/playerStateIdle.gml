@@ -6,21 +6,23 @@ function playerStateIdle(){
 		playerState = playerStateDeath
 	}
 	
-	if staminaRecovering stamina += staminaRecoveryRate
-	if stamina > maxStamina stamina = maxStamina
+	if (staminaRecovering) {
+		stamina += staminaRecoveryRate
+	}
+	if (stamina > maxStamina) {
+		staminaRecovering = false
+		stamina = maxStamina
+	}
 
 	
 var move_horizontal = keyboard_check(vk_right) - keyboard_check(vk_left)
 var move_vertical = keyboard_check(vk_up) - keyboard_check(vk_down)
-
-var bbox_side;
 
 x_speed = 0
 y_speed = 0
 
 if move_horizontal == 1 {
 	x_speed = playerSpeed
-	bbox_side = bbox_right
 	image_xscale = 1
 	attackOffset = 25
 	
@@ -28,11 +30,7 @@ if move_horizontal == 1 {
 	x_speed = -playerSpeed
 	image_xscale = -1
 	attackOffset = -25
-	bbox_side = bbox_left
-	
 }
-
-//if (tilemap_get_at_pixel(tilemap,bbox_side + x_speed, bbox_top) != 0)
 
 if move_vertical == -1 {
 	y_speed = playerSpeed
@@ -46,7 +44,12 @@ if move_horizontal == 0 && move_vertical == 0 {
 	x_speed *= attackDeceleration
 	y_speed *= attackDeceleration	
 }
-if x_speed == 0 && y_speed == 0 sprite_index = sPlayerIdle else sprite_index = sPlayerRun
+
+if (x_speed == 0 && y_speed == 0) {
+	sprite_index = sPlayerIdle
+	} else {
+		sprite_index = sPlayerRun
+	}
 
 if keyAttack && stamina > 5 {
 	image_index = 0
@@ -76,6 +79,13 @@ if image_index > 6 && canAttack {
 	canAttack = false
 	stamina -= 10
 	show_debug_message("Attack!")
+	var attackConfig = 
+	{
+	x : x + attackOffset,
+	y : y,
+	layer: layer,
+	dimension : currentDimension
+	}
 	self.attack = SpawnHitbox(oPlayerSwordHitbox, attackConfig)
 }
 

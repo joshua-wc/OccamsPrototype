@@ -1,4 +1,4 @@
-function PlayerCollision(){
+function PlayerCollision(colMap){
 if (sign(x_speed ==-1))
 {
     x -= x mod TILE_SIZE
@@ -8,7 +8,7 @@ var _collision = false;
 
 
 //Horizontal Tiles
-if (tilemap_get_at_pixel(collisionMap, x + x_speed, y))
+if (tilemap_get_at_pixel(colMap, x + x_speed, y))
 {
     x -= x mod TILE_SIZE
     if (sign(x_speed) == 1) x += TILE_SIZE - 1;
@@ -23,7 +23,7 @@ x += x_speed;
 
 
 //Vertical Tiles
-if (tilemap_get_at_pixel(collisionMap, x, y + y_speed))
+if (tilemap_get_at_pixel(colMap, x, y + y_speed))
 {
     y -= y mod TILE_SIZE
     if (sign(y_speed) == 1) y += TILE_SIZE - 1
@@ -41,22 +41,46 @@ return _collision
 
 }
 
-function enemyCollision()
-{
-	var _hor = chaseSpeed * moveDirection[0]
-	var _ver = chaseSpeed * moveDirection[1]
+function vectorCollision(vector) {
+		var x_speed = x + (vector[0] - x)
+	var y_speed = y + (vector[1] - y)
 	
-	if(tilemap_get_at_pixel(oPlayer.collisionMap, x + _hor, y))
+	var targetX = 0
+	var targetY = 0
+	
+	
+	if (tilemap_get_at_pixel(collisionMap, x_speed, y))
 	{
-		x -= x mod TILE_SIZE
-		if (sign(_hor) == 1) x += TILE_SIZE - 1;
-		chaseSpeed = 0
+		repeat(10)
+		{
+			targetX = irandom_range(x - 1, x + 1)
+			
+			
+			if (!tilemap_get_at_pixel(collisionMap, targetX, y))
+			{
+				break;
+			} else 
+			{
+				targetX = x
+			}
+		}
+		vector[@0] = targetX
 	}
 	
-	if(tilemap_get_at_pixel(oPlayer.collisionMap, x, y + _ver))
+	if (tilemap_get_at_pixel(collisionMap, x, y_speed))
 	{
-		y -= y mod TILE_SIZE
-		if (sign(_ver) == 1) y += TILE_SIZE - 1;
-		chaseSpeed = 0
+		repeat(10)
+		{
+			targetY = irandom_range(y - 0.1, y + 0.1)
+			
+			if (!tilemap_get_at_pixel(collisionMap, x, targetY))
+			{
+				break;
+			} else 
+			{
+				targetY = y
+			}
+		}
+		vector[@1] = targetY
 	}
 }
