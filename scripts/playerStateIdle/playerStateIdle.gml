@@ -79,20 +79,20 @@ if image_index > 6 && canAttack {
 	self.attack = SpawnHitbox(oPlayerSwordHitbox, attackConfig)
 }
 
-checkAnimEnd(sprite_index, image_index, image_speed, image_number)
+endPlayerAttack(image_index, image_speed, image_number)
 
 
 }
 
 function playerStateSliding(){
 sprite_index = sPlayerSlide
-checkAnimEnd(sprite_index, image_index, image_speed, image_number)
+endPlayerSlide(image_index, image_speed, image_number)
 }
 
 function playerStateThrow(){
 sprite_index = sPlayerThrow
 
-checkAnimEnd(sprite_index, image_index, image_speed, image_number)	
+endPlayerDefault(image_index, image_speed, image_number)	
 }
 
 function playerStateDeath(){
@@ -100,5 +100,5 @@ function playerStateDeath(){
 	y_speed = 0
 	image_speed = 0.4
 sprite_index = sPlayerDeath
-checkAnimEnd(sprite_index, image_index, image_speed, image_number)
+endPlayerDeath(image_index, image_speed, image_number)
 }

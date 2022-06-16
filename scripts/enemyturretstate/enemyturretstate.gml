@@ -17,7 +17,7 @@ function checkAggroTurret() {
 
 function turretStateAttacking() {
 		if !inPlayerDimension {
-		state = enemyStateIdle
+		state = turretStateIdle
 		exit
 	}
 	faceDirectionChasing()
@@ -39,5 +39,5 @@ if image_index > 4 && canAttack {
 
 
 
-checkAnimEnd(sprite_index, image_index, image_speed, image_number)
+endBanditTurretAttack(image_index, image_speed, image_number)
 }

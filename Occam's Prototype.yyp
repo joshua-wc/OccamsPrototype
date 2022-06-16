@@ -65,6 +65,7 @@
     {"id":{"name":"oGridSetup","path":"objects/oGridSetup/oGridSetup.yy",},"order":12,},
     {"id":{"name":"sPlayerRun","path":"sprites/sPlayerRun/sPlayerRun.yy",},"order":1,},
     {"id":{"name":"enemyPatrollerState","path":"scripts/enemyPatrollerState/enemyPatrollerState.yy",},"order":2,},
+    {"id":{"name":"oBanditTurretTracks","path":"objects/oBanditTurretTracks/oBanditTurretTracks.yy",},"order":4,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},
   ],
   "Options": [

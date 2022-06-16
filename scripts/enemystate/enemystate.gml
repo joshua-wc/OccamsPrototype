@@ -82,11 +82,12 @@ if image_index > 4 && canAttack {
 	canAttack = false
 
 	self.attack = SpawnHitbox(oBanditSwordHitbox, attackConfig)
+	oBandit.alarm[0] = attackDelay
 }
 
-oBandit.alarm[0] = attackDelay
 
-checkAnimEnd(sprite_index, image_index, image_speed, image_number)
+
+endBanditAttack(image_index, image_speed, image_number)
 
 }
 
@@ -107,7 +108,7 @@ function enemyStateDeath(){
 	
 	sprite_index = sBanditDeath
 	image_speed = 0.5
-	checkAnimEnd(sprite_index, image_index, image_speed, image_number)
+	endBanditDeath(image_index, image_speed, image_number)
 	
 }
 

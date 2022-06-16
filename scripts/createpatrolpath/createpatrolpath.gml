@@ -14,6 +14,17 @@ function patrolStraightLine(){
 	return newPath
 }
 
+function patrolRectangle() {
+	var newPath = path_add()
+	path_add_point(newPath, x, y, 100)
+	path_add_point(newPath, x - 200, y, 100)
+	path_add_point(newPath, x - 200, y + 100, 100)
+	path_add_point(newPath, x, y + 100, 100)
+	path_add_point(newPath, x, y, 100)
+	
+	path_start(newPath, walkSpeed, path_action_restart, 1)
+}
+
 function patrolRandomPath() {
 	
 	newPath = path_add()
