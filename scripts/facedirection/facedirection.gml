@@ -26,7 +26,7 @@ function faceDirectionRunning(){
 }
 
 function faceDirectionChasing(){
-	var targetPos = point_direction(x, y, oPlayer.x, oPlayer.y)
+	var targetPos = point_direction(x, y, target.x, target.y)
 	if (targetPos <= 90 || targetPos >= 270)
 	{
 		attackOffset = 18

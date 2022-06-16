@@ -13,7 +13,7 @@ function enemyStateIdle(){
 
 
 
-	checkAggro()
+	checkAggro() 
 
 if point_distance(originX, originY, x, y ) > 8 {
 	state = enemyStateReturning
@@ -106,6 +106,7 @@ function enemyStateDeath(){
 	vspeed = 0
 	
 	sprite_index = sBanditDeath
+	image_speed = 0.5
 	checkAnimEnd(sprite_index, image_index, image_speed, image_number)
 	
 }

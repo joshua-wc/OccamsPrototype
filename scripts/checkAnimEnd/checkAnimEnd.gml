@@ -6,12 +6,22 @@ if (imageIndex + imageSpeed >= imageNumber) {
 					case sPlayerDeath: game_end() 
 					break
 					case sBanditAttack: {
-						instance_destroy(self.attack)
+						
 						var name = object_get_name(object_index)
 						switch (name) {
-							case "oBandit": state = enemyStateIdle
+							case "oBandit": {
+								instance_destroy(self.attack)
+								state = enemyStateIdle
+							}
 							break
-							case "oBanditPatroller": state = enemyPatrollerStateChasing
+							case "oBanditPatroller": {
+								instance_destroy(self.attack)
+								state = enemyPatrollerStateChasing
+							}
+							break
+							case "oBanditTurret": {
+								state = turretStateIdle
+							}
 
 						}
 					} 
