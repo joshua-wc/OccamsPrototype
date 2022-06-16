@@ -13,10 +13,7 @@ function enemyStateIdle(){
 
 
 
-if (point_distance(x, y, target.x, target.y) <= aggroRange and target.currentDimension = currentDimension) {
-	state = enemyStateChasing
-	
-}
+	checkAggro()
 
 if point_distance(originX, originY, x, y ) > 8 {
 	state = enemyStateReturning
@@ -36,9 +33,7 @@ aggroRange = 400
 
 
 
-if point_distance(x, y, target.x, target.y) > aggroRange or target.currentDimension != currentDimension {
-	state = enemyStateIdle
-}
+checkAggro()
 
 if (point_distance(x, y, target.x, target.y) < attackRange && canAttack) {
 	image_index = 0
@@ -59,9 +54,7 @@ if (point_distance(x, y, target.x, target.y) < attackRange && canAttack) {
 	limitVectorMagnitude(velocity, maxSpeed)
 	addVector(position, velocity)
 	setVector(steeringForce, [0,0])
-	show_debug_message(position)
 	vectorToSpeed(position)
-	show_debug_message(string(vspeed))
 	faceDirectionChasing()
 
 
@@ -104,10 +97,7 @@ sprite_index = sBanditRun
 	move_towards_point(originX, originY, 1)
 	if point_distance(x, y, originX, originY) <= 8 state = enemyStateIdle
 	
-	if (point_distance(x, y, target.x, target.y) <= aggroRange) {
-	state = enemyStateChasing
-	
-}
+	checkAggro()
 	
 }
 
@@ -118,4 +108,18 @@ function enemyStateDeath(){
 	sprite_index = sBanditDeath
 	checkAnimEnd(sprite_index, image_index, image_speed, image_number)
 	
+}
+
+function checkAggro() {
+	
+	if (point_distance(x, y, target.x, target.y) <= aggroRange and target.currentDimension = currentDimension) {
+	state = enemyStateChasing
+	
+	}
+	
+	if state = enemyStateReturning exit
+
+	if point_distance(x, y, target.x, target.y) > aggroRange or target.currentDimension != currentDimension {
+	state = enemyStateIdle
+	}
 }
