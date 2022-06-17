@@ -14,7 +14,7 @@ if PlayerCollision(colMapId)
 
 oPlayer.collisionMap = colMapId
 
-mp_grid_clear_all(oGridSetup.grid)	
+mp_grid_clear_all(oController.grid)	
 	
 var tilesW = room_width / 16
 var tilesH = room_height / 16
@@ -28,7 +28,7 @@ for (var i = 0; i < tilesW; i++)
 		var tilesToCheck = tilemap_get(colMapId, i, j)
 		if tilesToCheck != 0
 		{
-			mp_grid_add_cell(oGridSetup.grid, i, j)
+			mp_grid_add_cell(oController.grid, i, j)
 		}
 			
 	}

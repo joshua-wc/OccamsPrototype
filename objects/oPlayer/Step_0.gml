@@ -43,7 +43,7 @@ if (nextDimension != currentDimension) {
 
 
 
-script_execute(playerState)
+script_execute(state)
 
 
 PlayerCollision(collisionMap)

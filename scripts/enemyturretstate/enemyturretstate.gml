@@ -23,6 +23,7 @@ function turretStateAttacking() {
 	faceDirectionChasing()
 	
 sprite_index = sBanditAttack
+image_speed = 0.5
 
 var shootDirection = point_direction(x, y, oPlayer.x, oPlayer.y)
 

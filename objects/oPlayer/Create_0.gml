@@ -2,7 +2,7 @@
 // You can write your code in this editor
 
 
-playerState = playerStateIdle
+state = playerStateIdle
 
 collisionMap = layer_tilemap_get_id(layer_get_id("Dimension_" + string(currentDimension) + "_Col"))
 

@@ -41,7 +41,7 @@ if (point_distance(x, y, target.x, target.y) < attackRange && canAttack) {
 }
 
 
-	if (keyboard_check(vk_space))
+	if (keyboard_check(vk_shift))
 	{
 		addVector(steeringForce, evadeForce())
 	} else {

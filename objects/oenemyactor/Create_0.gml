@@ -19,9 +19,7 @@ velocity = array_create(2)
 steeringForce = array_create(2)
 
 maxSpeed = 3
-maxForce = 0.1
-
-
+maxForce = 0.6
 
 inPlayerDimension = false
 

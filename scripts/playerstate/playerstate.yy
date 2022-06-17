@@ -6,7 +6,7 @@
     "path": "folders/Scripts/State.yy",
   },
   "resourceVersion": "1.0",
-  "name": "playerStateIdle",
+  "name": "playerState",
   "tags": [],
   "resourceType": "GMScript",
 }

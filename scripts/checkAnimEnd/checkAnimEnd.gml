@@ -41,7 +41,7 @@ function endPlayerAttack(imageIndex, imageSpeed, imageNumber){
 if (imageIndex + imageSpeed >= imageNumber) {
 		canAttack = true
 		instance_destroy(self.attack)
-		playerState = playerStateIdle
+		state = playerStateIdle
 		staminaRecovering = true
 	}
 }
@@ -50,7 +50,7 @@ function endPlayerSlide(imageIndex, imageSpeed, imageNumber){
 	
 if (imageIndex + imageSpeed >= imageNumber) {
 		staminaRecovering = true
-		playerState = playerStateIdle
+		state = playerStateIdle
 	}
 }
 
@@ -58,7 +58,7 @@ function endPlayerDefault(imageIndex, imageSpeed, imageNumber){
 	
 if (imageIndex + imageSpeed >= imageNumber) {
 		
-		playerState = playerStateIdle
+		state = playerStateIdle
 	}
 }
 

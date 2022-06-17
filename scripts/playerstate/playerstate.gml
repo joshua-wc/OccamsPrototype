@@ -3,7 +3,7 @@
 function playerStateIdle(){
 	if hp <= 0 {
 		image_index = 0
-		playerState = playerStateDeath
+		state = playerStateDeath
 	}
 	
 	if (staminaRecovering) {
@@ -12,6 +12,8 @@ function playerStateIdle(){
 	if (stamina > maxStamina) {
 		staminaRecovering = false
 		stamina = maxStamina
+	} else {
+		staminaRecovering = true
 	}
 
 	
@@ -45,6 +47,8 @@ if move_horizontal == 0 && move_vertical == 0 {
 	y_speed *= attackDeceleration	
 }
 
+image_speed = 1
+
 if (x_speed == 0 && y_speed == 0) {
 	sprite_index = sPlayerIdle
 	} else {
@@ -55,14 +59,14 @@ if keyAttack && stamina > 5 {
 	image_index = 0
 	
 	staminaRecovering = false
-	playerState = playerStateAttack
+	state = playerStateAttack
 }
 
 if keySlide && (move_horizontal != 0 or move_vertical != 0) && stamina > 8 {
 	image_index = 0
 	stamina -= 8
 	staminaRecovering = false
-	playerState = playerStateSliding
+	state = playerStateSliding
 }
 
 
@@ -70,6 +74,7 @@ if keySlide && (move_horizontal != 0 or move_vertical != 0) && stamina > 8 {
 
 function playerStateAttack(){
 sprite_index = sPlayerAttack
+image_speed = 1.8
 x_speed *= attackDeceleration
 y_speed *= attackDeceleration
 
