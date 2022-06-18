@@ -69,6 +69,10 @@ if keySlide && (move_horizontal != 0 or move_vertical != 0) && stamina > 8 {
 	state = playerStateSliding
 }
 
+if keyGrenade && ammo > 0 {
+	state = playerStateThrow	
+}
+
 
 }
 
@@ -91,23 +95,39 @@ if image_index > 6 && canAttack {
 	layer: layer,
 	dimension : currentDimension
 	}
-	self.attack = SpawnHitbox(oPlayerSwordHitbox, attackConfig)
+	self.attack = spawnObject(oPlayerSwordHitbox, attackConfig)
 }
 
-endPlayerAttack(image_index, image_speed, image_number)
+endPlayerAttack()
 
 
 }
 
 function playerStateSliding(){
 sprite_index = sPlayerSlide
-endPlayerSlide(image_index, image_speed, image_number)
+endPlayerSlide()
 }
 
 function playerStateThrow(){
 sprite_index = sPlayerThrow
 
-endPlayerDefault(image_index, image_speed, image_number)	
+var grenadeConfig = {
+	x : x,
+	y: y,
+	layer: layer,
+	speed : 7,
+	direction: oPlayer.direction
+}
+
+if (canThrow) {
+	canThrow = false
+	spawnObject(grenade, grenadeConfig)
+	ammo -= 1
+}
+
+
+
+endPlayerThrow()	
 }
 
 function playerStateDeath(){
@@ -115,5 +135,5 @@ function playerStateDeath(){
 	y_speed = 0
 	image_speed = 0.4
 sprite_index = sPlayerDeath
-endPlayerDeath(image_index, image_speed, image_number)
+endPlayerDeath()
 }

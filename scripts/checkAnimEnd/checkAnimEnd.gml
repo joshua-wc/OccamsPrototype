@@ -1,44 +1,44 @@
-function endBanditDeath(imageIndex, imageSpeed, imageNumber){
+function endBanditDeath(){
 	
-if (imageIndex + imageSpeed >= imageNumber) {
+if (image_index + image_speed >= image_number) {
 		instance_destroy(self)
 	}
 }
 
-function endBanditAttack(imageIndex, imageSpeed, imageNumber){
+function endBanditAttack(){
 	
-if (imageIndex + imageSpeed >= imageNumber) {
+if (image_index + image_speed >= image_number) {
 		instance_destroy(self.attack)
 		state = enemyStateIdle
 	}
 }
 
-function endBanditPatrollerAttack(imageIndex, imageSpeed, imageNumber){
+function endBanditPatrollerAttack(){
 	
-if (imageIndex + imageSpeed >= imageNumber) {
+if (image_index + image_speed >= image_number) {
 		instance_destroy(self.attack)
 		state = enemyPatrollerStateChasing
 	}
 }
 
-function endBanditTurretAttack(imageIndex, imageSpeed, imageNumber){
+function endBanditTurretAttack(){
 	
-if (imageIndex + imageSpeed >= imageNumber) {
+if (image_index + image_speed >= image_number) {
 		
 		state = turretStateIdle
 	}
 }
 
-function endPlayerDeath(imageIndex, imageSpeed, imageNumber){
+function endPlayerDeath(){
 	
-if (imageIndex + imageSpeed >= imageNumber) {
+if (image_index + image_speed >= image_number) {
 		game_end()
 	}
 }
 
-function endPlayerAttack(imageIndex, imageSpeed, imageNumber){
+function endPlayerAttack(){
 	
-if (imageIndex + imageSpeed >= imageNumber) {
+if (image_index + image_speed >= image_number) {
 		canAttack = true
 		instance_destroy(self.attack)
 		state = playerStateIdle
@@ -46,18 +46,25 @@ if (imageIndex + imageSpeed >= imageNumber) {
 	}
 }
 
-function endPlayerSlide(imageIndex, imageSpeed, imageNumber){
+function endPlayerSlide(){
 	
-if (imageIndex + imageSpeed >= imageNumber) {
+if (image_index + image_speed >= image_number) {
 		staminaRecovering = true
 		state = playerStateIdle
 	}
 }
 
-function endPlayerDefault(imageIndex, imageSpeed, imageNumber){
+function endPlayerThrow(){
 	
-if (imageIndex + imageSpeed >= imageNumber) {
-		
+if (image_index + image_speed >= image_number) {
+		canThrow = true
+		state = playerStateIdle
+	}
+}
+
+function endPlayerDefault(){
+	
+if (image_index + image_speed >= image_number) {		
 		state = playerStateIdle
 	}
 }

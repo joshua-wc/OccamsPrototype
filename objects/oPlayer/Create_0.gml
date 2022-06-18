@@ -20,8 +20,10 @@ staminaRecovering = true
 staminaRecoveryRate = 0.16
 
 canAttack = true
+canThrow = true
 
 ammo = 300
+grenade = oWarpGrenade
 
 
 

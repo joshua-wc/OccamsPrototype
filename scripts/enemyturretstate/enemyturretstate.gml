@@ -46,11 +46,11 @@ speed: bulletSpeed
 if image_index > 4 && canAttack {
 	canAttack = false
 
-	self.attack = spawnBullet(oRockMovable, attackConfig)
+	self.attack = spawnObject(oRockMovable, attackConfig)
 	alarm[0] = attackDelay
 }
 
 
 
-endBanditTurretAttack(image_index, image_speed, image_number)
+endBanditTurretAttack()
 }

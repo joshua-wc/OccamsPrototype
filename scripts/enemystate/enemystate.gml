@@ -88,13 +88,13 @@ vspeed *= attackDeceleration
 if image_index > 4 && canAttack {
 	canAttack = false
 
-	self.attack = SpawnHitbox(oBanditSwordHitbox, attackConfig)
+	self.attack = spawnObject(oBanditSwordHitbox, attackConfig)
 	oBandit.alarm[0] = attackDelay
 }
 
 
 
-endBanditAttack(image_index, image_speed, image_number)
+endBanditAttack()
 
 }
 
@@ -115,7 +115,7 @@ function enemyStateDeath(){
 	
 	sprite_index = sBanditDeath
 	image_speed = 0.5
-	endBanditDeath(image_index, image_speed, image_number)
+	endBanditDeath()
 	
 }
 

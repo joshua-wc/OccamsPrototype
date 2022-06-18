@@ -11,15 +11,6 @@ keySlide = keyboard_check_pressed(vk_control)
 keyGrenade = keyboard_check_pressed(vk_alt)
 
 
-
-if keyGrenade {
-if ammo <= 0 exit
-playerState = playerStateThrow
-instance_create_layer(x,y,layer,oWarpGrenade)
-ammo -= 1	
-}
-
-
 if stamina > 20 {
 if dimensionUp nextDimension++
 if dimensionDown nextDimension--

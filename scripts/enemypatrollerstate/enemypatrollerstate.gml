@@ -84,12 +84,12 @@ vspeed *= attackDeceleration
 if image_index > 4 && canAttack {
 	canAttack = false
 
-	self.attack = SpawnHitbox(oBanditSwordHitbox, attackConfig)
+	self.attack = spawnObject(oBanditSwordHitbox, attackConfig)
 	oBanditPatroller.alarm[0] = attackDelay
 	
 }
 oBanditPatroller.alarm[2] = 8
-endBanditPatrollerAttack(image_index, image_speed, image_number)
+endBanditPatrollerAttack()
 
 }
 
