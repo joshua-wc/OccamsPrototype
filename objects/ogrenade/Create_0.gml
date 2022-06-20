@@ -1,5 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-hspeed = 7 * oPlayer.image_xscale
 
-deceleration = 0.85
+
+path_start(path, 4, path_action_stop, 1)
+travelling = true

@@ -12,6 +12,19 @@ function patrolRectangle() {
 	path_start(newPath, walkSpeed, path_action_restart, 1)
 }
 
+function throwPath(targetX, targetY, arcPeak) {
+	var newPath = path_add()
+	path_add_point(newPath, x, y, 75)
+	path_add_point(newPath, (targetX - x) / 2 + x,  y + arcPeak, 75)
+	path_add_point(newPath, targetX, targetY, 100)
+	
+	path_set_closed(newPath, false)
+	path_set_kind(newPath, 1)
+	path_set_precision(newPath, 5)
+	
+	return newPath
+}
+
 /* Old random path code, keeping in case the collision check is useful
 function patrolRandomPath() {
 	

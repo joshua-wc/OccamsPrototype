@@ -10,6 +10,9 @@ keyAttack = keyboard_check_pressed(vk_space)
 keySlide = keyboard_check_pressed(vk_control)
 keyGrenade = keyboard_check_pressed(vk_alt)
 
+keyThrowing = keyboard_check_pressed(ord("G"))
+keyThrown = keyboard_check_released(ord("G"))
+
 
 if stamina > 20 {
 if dimensionUp nextDimension++

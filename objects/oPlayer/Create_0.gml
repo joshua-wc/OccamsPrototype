@@ -25,5 +25,7 @@ canThrow = true
 ammo = 300
 grenade = oWarpGrenade
 
-
-
+throwing = false
+throwArc = -50
+maxThrowDistance = 250
+maxThrowHeight = 100

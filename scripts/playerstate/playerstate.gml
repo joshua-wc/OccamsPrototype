@@ -73,6 +73,8 @@ if keyGrenade && ammo > 0 {
 	state = playerStateThrow	
 }
 
+if keyThrowing state = playerStateThrowing
+
 
 }
 
@@ -111,12 +113,19 @@ endPlayerSlide()
 function playerStateThrow(){
 sprite_index = sPlayerThrow
 
+	var x_Throw = mouse_x
+	var y_Throw = mouse_y
+	
+	x_Throw = clamp(x_Throw, x - maxThrowDistance, x + maxThrowDistance)
+	y_Throw = clamp(y_Throw, y - maxThrowHeight, y + maxThrowHeight)
+	
+	var grenadePath = throwPath(x_Throw, y_Throw, throwArc)
+
 var grenadeConfig = {
 	x : x,
 	y: y,
 	layer: layer,
-	speed : 7,
-	direction: oPlayer.direction
+	path: grenadePath
 }
 
 if (canThrow) {
@@ -130,10 +139,27 @@ if (canThrow) {
 endPlayerThrow()	
 }
 
+function playerStateThrowing() {
+	throwing = true
+	var x_Throw = mouse_x
+	var y_Throw = mouse_y
+	
+	x_Throw = clamp(x_Throw, x - maxThrowDistance, x + maxThrowDistance)
+	y_Throw = clamp(y_Throw, y - maxThrowHeight, y + maxThrowHeight)
+	
+	grenadePath = throwPath(x_Throw, y_Throw, throwArc)
+	
+	if (keyThrown) {
+		throwing = false
+		
+		state = playerStateThrow	
+	}
+}
+
 function playerStateDeath(){
 	x_speed = 0
 	y_speed = 0
 	image_speed = 0.4
-sprite_index = sPlayerDeath
-endPlayerDeath()
+	sprite_index = sPlayerDeath
+	endPlayerDeath()
 }
