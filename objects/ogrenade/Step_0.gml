@@ -1,6 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+pathCollision(path)
+
 if (path_position = 1 and travelling) {
 	travelling = false
 	path_delete(path)

@@ -15,8 +15,10 @@ function patrolRectangle() {
 function throwPath(targetX, targetY, arcPeak) {
 	var newPath = path_add()
 	path_add_point(newPath, x, y, 75)
-	path_add_point(newPath, (targetX - x) / 2 + x,  y + arcPeak, 75)
 	path_add_point(newPath, targetX, targetY, 100)
+	var pathHalfX = path_get_x(newPath, 0.5)
+	var pathHalfY = path_get_y(newPath, 0.5)
+	path_insert_point(newPath, 1, (targetX - x) /2 + x,  pathHalfY + arcPeak, 75)
 	
 	path_set_closed(newPath, false)
 	path_set_kind(newPath, 1)

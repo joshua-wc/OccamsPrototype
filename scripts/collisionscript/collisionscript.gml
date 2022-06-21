@@ -84,3 +84,24 @@ function vectorCollision(vector) {
 		vector[@1] = targetY
 	}
 }
+
+function pathCollision (path) {
+	if !travelling exit
+	
+	var directionFactorX = xprevious < x ? 1 : -1
+	var directionFactorY = yprevious < y ? 1 : -1
+	
+	var x_speed = x + (maxSpeed * directionFactorX)
+	var y_speed = y + (maxSpeed * directionFactorY)
+	
+	if (tilemap_get_at_pixel(oPlayer.collisionMap, x_speed, y)) {
+		travelling = false
+		path_delete(path)
+	}
+	
+	if (tilemap_get_at_pixel(oPlayer.collisionMap, x, y_speed)) {
+		travelling = false
+		path_delete(path)
+	}
+	
+}
