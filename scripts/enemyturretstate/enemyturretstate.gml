@@ -25,7 +25,7 @@ function turretStateAttacking() {
 sprite_index = sBanditAttack
 image_speed = 0.5
 
-var shootDirection = point_direction(x, y, oPlayer.x, oPlayer.y)
+var shootDirection = point_direction(x, y, target.x, target.y)
 
 var attackConfig = 
 {
@@ -40,17 +40,12 @@ speed: bulletSpeed
 }
 
 
-
-
-
 if image_index > 4 && canAttack {
 	canAttack = false
 
 	self.attack = spawnObject(oRockMovable, attackConfig)
 	alarm[0] = attackDelay
 }
-
-
 
 endBanditTurretAttack()
 }

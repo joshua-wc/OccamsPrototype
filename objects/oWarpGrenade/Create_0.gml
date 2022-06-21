@@ -3,4 +3,4 @@
 
 event_inherited()
 
-explosion = oWarpField
+explosion = oWarpHitbox

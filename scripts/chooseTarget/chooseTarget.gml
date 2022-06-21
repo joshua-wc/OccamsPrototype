@@ -15,7 +15,6 @@ for (var i = 0; i < array_length(enemies); i++) {
 	and enemies[i].originDimension != originDimension 
 	and point_distance(x, y, enemies[i].x, enemies[i].y) <= aggroRange {
 		target = enemies[i]
-		show_debug_message("I've finally found you")
 	}
 }
 

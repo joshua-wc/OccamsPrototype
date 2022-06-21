@@ -24,7 +24,6 @@ if (point_distance(x, y, target.x, target.y) <= aggroRange and target.currentDim
 	state = enemyPatrollerStateChasing
 	alarm_set(2, -1)
 	alarm_set(2, 1)
-	show_debug_message("Aha!")
 }
 
 
