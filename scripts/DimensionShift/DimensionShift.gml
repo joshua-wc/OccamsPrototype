@@ -1,8 +1,8 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function ChangeDimension(dimensionNum){
+function ChangeDimension(_targetDimension){
 	
-var layerId = layer_get_id("Dimension_" + string(oPlayer.nextDimension) + "_Col")
+var layerId = layer_get_id("Dimension_" + string(_targetDimension) + "_Col")
 var colMapId = layer_tilemap_get_id(layerId)
 
 if PlayerCollision(colMapId)
@@ -46,8 +46,8 @@ for (var i = 0; i < array_length(enemies); i++) {
 	
 	if (point_distance(enemy.x, enemy.y, oPlayer.x, oPlayer.y) <= 75) {
 		
-		enemy.layer = layer_get_id("Enemies_" + string(dimensionNum))
-		enemy.currentDimension = dimensionNum
+		enemy.layer = layer_get_id("Enemies_" + string(_targetDimension))
+		enemy.currentDimension = _targetDimension
 		enemy.collisionMap = colMapId
 
 	}
@@ -59,9 +59,10 @@ var layers = layer_get_all()
 for (var i = 0; i < array_length(layers); i++) {
 	var layerName = layer_get_name(layers[i])
 	
+	
 	 
 		
-		if string_count(string(dimensionNum), layerName) || string_count("Player", layerName) {
+		if string_count(string(_targetDimension), layerName) || string_count("Player", layerName) {
 
 			layer_set_visible(layers[i], true)
 
@@ -74,5 +75,23 @@ for (var i = 0; i < array_length(layers); i++) {
 
 }
 
-oPlayer.currentDimension = oPlayer.nextDimension
+oPlayer.currentDimension = _targetDimension
+}
+
+function dimensionBelow(_dimension) {
+	var dimensionBelow = _dimension - 1
+	if (dimensionBelow = 0) {
+		dimensionBelow = 4
+	}
+	
+	return dimensionBelow
+}
+
+function dimensionAbove(_dimension) {
+	var dimensionAbove = _dimension + 1
+	if (dimensionAbove > 4) {
+		dimensionAbove = 1
+	}
+	
+	return dimensionAbove
 }
