@@ -13,6 +13,12 @@ keyGrenade = keyboard_check_pressed(vk_alt)
 keyThrowing = keyboard_check_pressed(ord("G"))
 keyThrown = keyboard_check_released(ord("G"))
 
+keyGrenadeFrag = keyboard_check_pressed(ord("F"))
+keyGrenadeSwitch = keyboard_check_pressed(ord("H"))
+
+if keyGrenadeSwitch grenade = oWarpGrenade
+if keyGrenadeFrag grenade = oDimensionFrag
+
 
 if stamina > 20 {
 if dimensionUp nextDimension++

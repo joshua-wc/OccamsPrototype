@@ -125,6 +125,7 @@ var grenadeConfig = {
 	x : x,
 	y: y,
 	layer: layer,
+	dimension: currentDimension,
 	path: grenadePath
 }
 

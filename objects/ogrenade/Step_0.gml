@@ -30,7 +30,13 @@ if (image_xscale > 1 and sprite_index = sExplosion) {
 	exploding = false
 	
 		if (!hitboxSpawned) {
-			hitbox = instance_create_layer(x, y, layer, explosion)
+			var explosionConfig = {
+				x: frag ? x - 24 : x,
+				y: frag ? y - 24 : y,
+				layer: layer,
+				dimension: dimension
+			}
+			hitbox = spawnObject(explosion, explosionConfig)
 			hitboxSpawned = true
 		}
 	
@@ -42,7 +48,7 @@ if expiry <= 0 {
 	image_yscale -= 0.08
 	
 	if image_xscale <= 0 {
-		instance_destroy(explosion)
+		instance_destroy(hitbox)
 		instance_destroy()
 	}
 }

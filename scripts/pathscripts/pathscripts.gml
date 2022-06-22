@@ -13,18 +13,47 @@ function patrolRectangle() {
 }
 
 function throwPath(targetX, targetY, arcPeak) {
+	
 	var newPath = path_add()
 	path_add_point(newPath, x, y, 75)
 	path_add_point(newPath, targetX, targetY, 100)
-	var pathHalfX = path_get_x(newPath, 0.5)
-	var pathHalfY = path_get_y(newPath, 0.5)
-	path_insert_point(newPath, 1, (targetX - x) /2 + x,  pathHalfY + arcPeak, 75)
+
+
+	path_insert_point(newPath, 1, (targetX - x) / 2 + x,  (targetY - y) / 2 + y + arcPeak, 75)
 	
 	path_set_closed(newPath, false)
 	path_set_kind(newPath, 1)
 	path_set_precision(newPath, 5)
 	
 	return newPath
+}
+
+function randomGridPath() {
+	
+	path_delete(newPath)
+	newPath = path_add()
+		
+		var targetX = 0
+		var targetY = 0
+		
+		repeat(20)
+		{
+			targetX = irandom_range(x - 200, x + 200)
+			targetY = irandom_range(y - 200, y + 200)
+			
+			if (!tilemap_get_at_pixel(oController.mapId, targetX, targetY))
+			{
+				break;
+			}
+		}
+	
+	
+	
+	mp_grid_path(oController.grid, newPath, x, y, targetX, targetY, 1)
+	
+	path_start(newPath, walkSpeed, path_action_stop, 1)
+		
+	
 }
 
 /* Old random path code, keeping in case the collision check is useful
@@ -59,31 +88,3 @@ function patrolRandomPath() {
 	
 	return newPath
 }*/
-
-function randomGridPath() {
-	
-	path_delete(newPath)
-	newPath = path_add()
-		
-		var targetX = 0
-		var targetY = 0
-		
-		repeat(20)
-		{
-			targetX = irandom_range(x - 200, x + 200)
-			targetY = irandom_range(y - 200, y + 200)
-			
-			if (!tilemap_get_at_pixel(oController.mapId, targetX, targetY))
-			{
-				break;
-			}
-		}
-	
-	
-	
-	mp_grid_path(oController.grid, newPath, x, y, targetX, targetY, 1)
-	
-	path_start(newPath, walkSpeed, path_action_stop, 1)
-		
-	
-}

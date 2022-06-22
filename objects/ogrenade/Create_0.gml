@@ -1,11 +1,13 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-maxSpeed = 4
+maxSpeed = 7
 
 travelling = true
 exploding = false
 hitboxSpawned = false
+
+frag = false
 
 expiry = 45
 
