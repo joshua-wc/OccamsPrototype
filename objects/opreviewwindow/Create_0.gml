@@ -6,8 +6,11 @@ h = room_height/TILE_SIZE * 3
 w = room_width/TILE_SIZE * 3
 dimension = oPlayer.currentDimension
 
+shifting = false
+
 
 function refreshPreview() {
+	
 	var _dimensionBelow = dimensionBelow(dimension)
 	var _tilemap = layer_tilemap_get_id(layer_get_id("Dimension_" + string(_dimensionBelow) + "_BG"))
 	
@@ -20,7 +23,7 @@ function refreshPreview() {
 		draw_tilemap(_tilemap,0,0)
 		surface_reset_target()
 		surface_set_target(previewSurf)
-		draw_surface_stretched(_surfTemp, 0,0,w,h)
+		draw_surface(_surfTemp, 0,0)
 		surface_reset_target()
 		surface_free(_surfTemp)
 		

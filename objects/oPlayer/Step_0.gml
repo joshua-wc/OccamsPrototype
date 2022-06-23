@@ -33,9 +33,13 @@ if dimensionShiftThree nextDimension = 3
 
 if nextDimension > 4 nextDimension = 1
 if nextDimension < 1 nextDimension = 4
-if (nextDimension != currentDimension) {
+if (nextDimension != currentDimension and !shifting) {
 	stamina -= 25
-	ChangeDimension(nextDimension)
+	shifting = true
+	alarm[0] = 180
+	oPreviewWindow.shifting = true
+	oPreviewWindow.alarm[0] = 180
+	
 	
 }
 

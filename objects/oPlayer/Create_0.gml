@@ -29,3 +29,5 @@ throwing = false
 throwArc = -50
 maxThrowDistance = 250
 maxThrowHeight = 100
+
+shifting = false

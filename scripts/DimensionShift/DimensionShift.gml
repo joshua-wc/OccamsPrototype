@@ -2,6 +2,7 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function ChangeDimension(_targetDimension){
 	
+	
 var layerId = layer_get_id("Dimension_" + string(_targetDimension) + "_Col")
 var colMapId = layer_tilemap_get_id(layerId)
 
@@ -74,8 +75,10 @@ for (var i = 0; i < array_length(layers); i++) {
 		}
 
 }
-surface_free(oPreviewWindow.previewSurf)
+
+oPreviewWindow.dimension = _targetDimension
 oPlayer.currentDimension = _targetDimension
+surface_free(oPreviewWindow.previewSurf)
 }
 
 function dimensionBelow(_dimension) {
