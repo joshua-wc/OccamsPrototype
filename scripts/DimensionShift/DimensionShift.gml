@@ -74,7 +74,7 @@ for (var i = 0; i < array_length(layers); i++) {
 		}
 
 }
-
+surface_free(oPreviewWindow.previewSurf)
 oPlayer.currentDimension = _targetDimension
 }
 

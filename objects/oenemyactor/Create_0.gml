@@ -28,3 +28,6 @@ canBeDamaged = true
 
 target = oPlayer
 
+originDimension = string_char_at(layer_get_name(layer), 9)
+currentDimension = originDimension
+

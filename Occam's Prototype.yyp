@@ -2,6 +2,7 @@
   "resources": [
     {"id":{"name":"enemyState","path":"scripts/enemyState/enemyState.yy",},"order":1,},
     {"id":{"name":"meleeHitbox","path":"sprites/meleeHitbox/meleeHitbox.yy",},"order":3,},
+    {"id":{"name":"oPreviewWindow","path":"objects/oPreviewWindow/oPreviewWindow.yy",},"order":16,},
     {"id":{"name":"oDimensionFrag","path":"objects/oDimensionFrag/oDimensionFrag.yy",},"order":3,},
     {"id":{"name":"Autumn_Forest","path":"tilesets/Autumn_Forest/Autumn_Forest.yy",},"order":0,},
     {"id":{"name":"CollisionScript","path":"scripts/CollisionScript/CollisionScript.yy",},"order":0,},
