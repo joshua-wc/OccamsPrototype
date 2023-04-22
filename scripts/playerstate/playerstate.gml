@@ -89,7 +89,6 @@ y_speed *= attackDeceleration
 if image_index > 6 && canAttack {
 	canAttack = false
 	stamina -= 10
-	show_debug_message("Attack!")
 	var attackConfig = 
 	{
 	x : x + attackOffset,
@@ -100,18 +99,29 @@ if image_index > 6 && canAttack {
 	self.attack = spawnObject(oPlayerSwordHitbox, attackConfig)
 }
 
-endPlayerAttack()
+if (checkAnimEnd()) {
+		canAttack = true
+		instance_destroy(self.attack)
+		state = playerStateIdle
+		staminaRecovering = true
+	}
 
 
 }
 
 function playerStateSliding(){
 sprite_index = sPlayerSlide
-endPlayerSlide()
+if (checkAnimEnd()) {
+		staminaRecovering = true
+		state = playerStateIdle
+	}
 }
 
 function playerStateThrow(){
-sprite_index = sPlayerThrow
+
+
+if (canThrow) {
+	sprite_index = sPlayerThrow
 
 	var x_Throw = mouse_x
 	var y_Throw = mouse_y
@@ -128,8 +138,6 @@ var grenadeConfig = {
 	dimension: currentDimension,
 	path: grenadePath
 }
-
-if (canThrow) {
 	canThrow = false
 	spawnObject(grenade, grenadeConfig)
 	ammo -= 1
@@ -137,7 +145,10 @@ if (canThrow) {
 
 
 
-endPlayerThrow()	
+if (checkAnimEnd()) {
+		canThrow = true
+		state = playerStateIdle
+	}	
 }
 
 function playerStateThrowing() {
@@ -162,5 +173,7 @@ function playerStateDeath(){
 	y_speed = 0
 	image_speed = 0.4
 	sprite_index = sPlayerDeath
-	endPlayerDeath()
+if (checkAnimEnd()) {
+		game_end()
+	}
 }

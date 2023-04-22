@@ -46,6 +46,9 @@ if image_index > 4 && canAttack {
 	self.attack = spawnObject(oRockMovable, attackConfig)
 	alarm[0] = attackDelay
 }
+if (checkAnimEnd()) {
+		
+		state = turretStateIdle
+	}
 
-endBanditTurretAttack()
 }

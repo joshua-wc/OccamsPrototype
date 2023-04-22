@@ -89,12 +89,15 @@ if image_index > 4 && canAttack {
 	canAttack = false
 
 	self.attack = spawnObject(oBanditSwordHitbox, attackConfig)
-	oBandit.alarm[0] = attackDelay
+	self.alarm[0] = attackDelay
 }
 
 
+if (checkAnimEnd()) {
+	instance_destroy(self.attack)
+	state = enemyStateIdle
+}
 
-endBanditAttack()
 
 }
 
@@ -115,7 +118,9 @@ function enemyStateDeath(){
 	
 	sprite_index = sBanditDeath
 	image_speed = 0.5
-	endBanditDeath()
+	if (checkAnimEnd()) {
+		instance_destroy(self)
+	}
 	
 }
 

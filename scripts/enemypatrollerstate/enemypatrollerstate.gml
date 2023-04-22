@@ -84,11 +84,15 @@ if image_index > 4 && canAttack {
 	canAttack = false
 
 	self.attack = spawnObject(oBanditSwordHitbox, attackConfig)
-	oBanditPatroller.alarm[0] = attackDelay
+	self.alarm[0] = attackDelay
 	
 }
-oBanditPatroller.alarm[2] = 8
-endBanditPatrollerAttack()
+self.alarm[2] = 8
+if (checkAnimEnd()) {
+		instance_destroy(self.attack)
+		state = enemyPatrollerStateChasing
+	}
+
 
 }
 
