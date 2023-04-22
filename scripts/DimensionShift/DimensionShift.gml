@@ -16,25 +16,9 @@ if PlayerCollision(colMapId)
 oPlayer.collisionMap = colMapId
 
 mp_grid_clear_all(oController.grid)	
+
+createPathGrid(_targetDimension)
 	
-var tilesW = room_width / 16
-var tilesH = room_height / 16
-
-
-for (var i = 0; i < tilesW; i++)
-{
-	for (var j = 0; j < tilesH; j++)
-	{
-		
-		var tilesToCheck = tilemap_get(colMapId, i, j)
-		if tilesToCheck != 0
-		{
-			mp_grid_add_cell(oController.grid, i, j)
-		}
-			
-	}
-}
-
 
 
 var enemyLayer = layer_get_id("Enemies_" + string(oPlayer.currentDimension))

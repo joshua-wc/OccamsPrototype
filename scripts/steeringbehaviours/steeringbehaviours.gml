@@ -35,6 +35,12 @@ function evadeForce(){
 	
 }
 
+function avoidForce(targetVector){
+		var col = vectorCollision(targetVector)
+		return fleeForce(col)
+
+}
+
 function arriveForce(vector, slowingRadius){
 	subtractVector(vector, position)
 	var dist = getVectorMagnitude(vector)

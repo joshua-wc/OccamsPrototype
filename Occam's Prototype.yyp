@@ -58,6 +58,7 @@
     {"id":{"name":"sPlayerAttack","path":"sprites/sPlayerAttack/sPlayerAttack.yy",},"order":2,},
     {"id":{"name":"oBanditPatroller","path":"objects/oBanditPatroller/oBanditPatroller.yy",},"order":2,},
     {"id":{"name":"Ashlands_Background","path":"tilesets/Ashlands_Background/Ashlands_Background.yy",},"order":5,},
+    {"id":{"name":"ControllerUtils","path":"scripts/ControllerUtils/ControllerUtils.yy",},"order":12,},
     {"id":{"name":"sGrenade","path":"sprites/sGrenade/sGrenade.yy",},"order":5,},
     {"id":{"name":"sBanditAttack","path":"sprites/sBanditAttack/sBanditAttack.yy",},"order":2,},
     {"id":{"name":"Rock","path":"sprites/Rock/Rock.yy",},"order":8,},

@@ -36,7 +36,7 @@ if nextDimension < 1 nextDimension = 4
 if (nextDimension != currentDimension and !shifting) {
 	stamina -= 25
 	shifting = true
-	alarm[0] = 180
+	alarm[0] = 120
 	oPreviewWindow.shifting = true
 	oPreviewWindow.alarm[0] = 180
 	

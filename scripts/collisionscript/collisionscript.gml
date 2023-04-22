@@ -42,15 +42,18 @@ return _collision
 }
 
 function vectorCollision(vector) {
-		var x_speed = x + (vector[0] - x)
+	var x_speed = x + (vector[0] - x)
 	var y_speed = y + (vector[1] - y)
 	
 	var targetX = 0
 	var targetY = 0
 	
+	var colVector = array_create(2)
+	
 	
 	if (tilemap_get_at_pixel(collisionMap, x_speed, y))
 	{
+		colVector[0] = x_speed
 		repeat(10)
 		{
 			targetX = irandom_range(x - 1, x + 1)
@@ -61,14 +64,17 @@ function vectorCollision(vector) {
 				break;
 			} else 
 			{
+				
 				targetX = x
 			}
 		}
 		vector[@0] = targetX
+		
 	}
 	
 	if (tilemap_get_at_pixel(collisionMap, x, y_speed))
 	{
+		colVector[1] = y_speed
 		repeat(10)
 		{
 			targetY = irandom_range(y - 0.1, y + 0.1)
@@ -78,11 +84,15 @@ function vectorCollision(vector) {
 				break;
 			} else 
 			{
+				
 				targetY = y
 			}
 		}
 		vector[@1] = targetY
+		
 	}
+	return colVector
+
 }
 
 function pathCollision (path) {

@@ -48,6 +48,7 @@ if (point_distance(x, y, target.x, target.y) < attackRange && canAttack) {
 		addVector(steeringForce, arriveForce([oPlayer.x, oPlayer.y], 50))
 	}
 	
+	//addVector(steeringForce, avoidForce(steeringForce))
 	
 	
 	addVector(velocity, steeringForce)
