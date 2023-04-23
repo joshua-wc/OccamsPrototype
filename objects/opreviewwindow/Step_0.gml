@@ -4,3 +4,4 @@ x = oPlayer.x + 75
 y = oPlayer.y 
 
 dimension = oPlayer.currentDimension
+previewDimension = oPlayer.nextDimension

@@ -1,10 +1,16 @@
 /// @description Insert description here
 // You can write your code in this editor
+
+
+
+view_visible[1] = false
+
 previewSurf = -1
 enemiesSurf = -1
-h = room_height/TILE_SIZE * 3
-w = room_width/TILE_SIZE * 3
+h = 100
+w = 1800
 dimension = oPlayer.currentDimension
+previewDimension = oPlayer.nextDimension
 
 shifting = false
 
