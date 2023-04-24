@@ -62,23 +62,7 @@ for (var i = 0; i < array_length(layers); i++) {
 
 oPreviewWindow.dimension = _targetDimension
 oPlayer.currentDimension = _targetDimension
-surface_free(oPreviewWindow.previewSurf)
+oPreviewWindow.alarm[0] = 30
+//surface_free(oPreviewWindow.previewSurf)
 }
 
-function dimensionBelow(_dimension) {
-	var dimensionBelow = _dimension - 1
-	if (dimensionBelow = 0) {
-		dimensionBelow = 4
-	}
-	
-	return dimensionBelow
-}
-
-function dimensionAbove(_dimension) {
-	var dimensionAbove = _dimension + 1
-	if (dimensionAbove > 4) {
-		dimensionAbove = 1
-	}
-	
-	return dimensionAbove
-}

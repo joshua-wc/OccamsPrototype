@@ -1,12 +1,12 @@
 /// @description Insert description here
 // You can write your code in this editor
-if !shifting {
+if shifting {
 	view_visible[1] = false
 
 exit
 }
 
-if shifting {
+if !shifting {
 	/*view_visible[1] = true
 	view_xport[1] = oPlayer.x + 50;
 	view_yport[1] = oPlayer.y;
@@ -14,7 +14,7 @@ if shifting {
 	view_hport[1] = room_height / 10;
 	view_camera[1] = camera_create_view(32, 32, room_width, room_height, 0, noone, -1, -1, 0, 0);*/
 	
-	if (surface_exists(previewSurf)) {
+	/*if (surface_exists(previewSurf)) {
 		var _surfTemp = surface_create(w, h)
 		surface_set_target(_surfTemp)
 		//draw_clear(c_black)
@@ -50,12 +50,12 @@ if shifting {
 	} else {
 	previewSurface = surface_create(w, h)	
 	}
-}
+}*/
 
-/*if (!surface_exists(previewSurf)) refreshPreview();
+refreshPreview();
 draw_surface(previewSurf, x, y)
 
-if (!surface_exists(enemiesSurf)) enemiesSurf = surface_create(w, h)
+/*if (!surface_exists(enemiesSurf)) enemiesSurf = surface_create(w, h)
 surface_set_target(enemiesSurf)
 draw_clear_alpha(c_black, 0.0)
 
@@ -67,7 +67,7 @@ with(oEnemyActor) {
 		draw_sprite_ext(sprite_index, image_index, x/TILE_SIZE * 3, y/TILE_SIZE * 3, image_xscale / TILE_SIZE * 3, image_yscale / TILE_SIZE * 3, image_angle, c_white, image_alpha)
 	}
 	
-
+*/
 }
-surface_reset_target()
-draw_surface(enemiesSurf, x, y)
+//surface_reset_target()
+//draw_surface(enemiesSurf, x, y)
