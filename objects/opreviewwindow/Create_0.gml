@@ -6,7 +6,7 @@
 view_visible[1] = false
 
 previewSurf = -1
-enemiesSurf = -1
+
 h = 100
 w = 180
 dimension = oPlayer.currentDimension
