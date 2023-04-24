@@ -37,8 +37,8 @@ if (nextDimension != currentDimension and !shifting) {
 	stamina -= 25
 	shifting = true
 	alarm[0] = 120
-	oPreviewWindow.shifting = true
-	oPreviewWindow.alarm[0] = 180
+	oController.shifting = true
+
 	
 	
 }

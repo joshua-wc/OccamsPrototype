@@ -11,3 +11,13 @@ if (instance_exists(oPlayer)) {
 	draw_sprite_ext(sHealthFront, 1, 8, 9, 
 	max(0, oPlayer.hp/oPlayer.maxHp), 1, 0, c_white, 1)
 }
+
+if !shifting exit
+
+
+if shifting {
+	
+refreshPreview();
+draw_surface(previewSurf, x, y)
+
+}

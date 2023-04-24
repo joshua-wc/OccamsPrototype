@@ -60,9 +60,9 @@ for (var i = 0; i < array_length(layers); i++) {
 
 }
 
-oPreviewWindow.dimension = _targetDimension
+oController.dimension = _targetDimension
 oPlayer.currentDimension = _targetDimension
-oPreviewWindow.alarm[0] = 30
-//surface_free(oPreviewWindow.previewSurf)
+oController.alarm[0] = 30
+
 }
 

@@ -14,3 +14,19 @@ yTo = ystart;
 
 createPathGrid(oPlayer.currentDimension)
 
+// Preview Setup
+
+previewSurf = -1
+
+h = 200
+w = 300
+dimension = oPlayer.currentDimension
+previewDimension = oPlayer.nextDimension
+
+previewX = oPlayer.x
+previewY = oPlayer.y
+
+shifting = false
+
+refreshPreview()
+
