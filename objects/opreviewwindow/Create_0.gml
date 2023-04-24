@@ -38,7 +38,7 @@ function refreshPreview() {
 		var _tilemap = layer_tilemap_get_id(layer_get_id("Dimension_" + string(previewDimension) + "_Col"))
 		draw_tilemap(_tilemap,0,0)
 		with (oEnemyActor) {
-			if (currentDimension = oPreviewWindow.previewDimension) {
+			if (currentDimension = oPlayer.nextDimension) {
 			draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, c_white, image_alpha)	
 			}
 		
